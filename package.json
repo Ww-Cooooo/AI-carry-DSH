@@ -1,6 +1,6 @@
 {
   "name": "eh3-dsh-ai-carry",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "type": "module",
   "description": "AI carry-DSH: native DeepSeek Harness workflow for using AI Carry methods and reviewing sourced learning.",

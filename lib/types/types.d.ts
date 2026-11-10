@@ -1,6 +1,7 @@
 export interface Binding {id:string;realRoot:string;instanceId:string;name:string;mission:string;direction:string;version:string;policy:string;issue?:string}
 export interface Workspace {id:string;path:string;name:string}
 export interface Accumulation {id:string;title:string;summary:string;kind:string;scope:string[];state:string}
+export interface AssetDetail extends Accumulation {source:string;conditions:string[];excludes:string[];body:string;hash:string;partial:boolean;available:boolean;message:string}
 export interface EntryView {workspace:Workspace|null;binding:Binding|null;bindings:Binding[];assets:Accumulation[];tasks:TaskSummary[];issue:string}
 export interface DraftInput {kind:'sop'|'memory'|'experience'|'capability';subtype?:'general'|'habit';title:string;summary:string;triggers:string[];aliases?:string[];scope:string[];conditions?:string[];excludes?:string[];steps:string[];failure_handling?:string[];completion_checks?:string[];notes?:string[]}
 export interface Candidate {id:string;title:string;summary:string;kind:string;scope:string[];reason:string;state:string}

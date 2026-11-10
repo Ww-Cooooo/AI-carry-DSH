@@ -6,6 +6,7 @@ import {useGSAP} from '@gsap/react';
 import Lenis from 'lenis';
 import type {View,TaskView,Learning,DraftInput,SessionOption,Binding} from './types';
 import {Backpack,CarryShell,createEntryTarget} from './home';
+import {Reading} from './reading';
 import {TYPERT_REMOTE} from '../lib/typert.remote-client.js';
 import css from './style.css';
 
@@ -20,7 +21,6 @@ type Act=(method:string,...args:any[])=>Promise<View|undefined>;
 function Icon(){return <Backpack size={20}/>}
 function useReduced(){const [v,set]=useState(()=>matchMedia('(prefers-reduced-motion: reduce)').matches);useEffect(()=>{const q=matchMedia('(prefers-reduced-motion: reduce)'),f=()=>set(q.matches);q.addEventListener('change',f);return()=>q.removeEventListener('change',f)},[]);return v;}
 function Text({children}:{children:string}){return <pre className="carry-text">{children}</pre>}
-function Reading({children}:{children:string}){const inline=(s:string)=>s.split(/(\*\*[^*]+\*\*)/g).map((part,i)=>part.startsWith('**')?<strong key={i}>{part.slice(2,-2)}</strong>:part);return <div className="carry-reading">{children.trim().split(/\n\s*\n/).map((block,i)=>/^---+$/.test(block.trim())?<hr key={i}/>:/^#{1,4} /.test(block)?<h4 key={i}>{inline(block.replace(/^#{1,4} /,''))}</h4>:<p key={i}>{inline(block)}</p>)}</div>}
 function Evidence({children}:{children:React.ReactNode}){return <div className="carry-evidence">{children}</div>}
 
 // Native module chunks are loaded by Harness, so optional renderers have no CDN dependency.

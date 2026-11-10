@@ -1,7 +1,7 @@
 {
-  "checkedAt": "2026-11-10T06:58:32.049177+00:00",
+  "checkedAt": "2026-11-10T11:56:27.831070+00:00",
   "project": "AI carry-DSH",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "environment": {
     "os": "Windows",
     "node": "24.16.0",
@@ -15,7 +15,7 @@
     "build": "passed",
     "typeCheck": "passed",
     "integrationTests": {
-      "passed": 15,
+      "passed": 16,
       "failed": 0
     },
     "runtimeFilesMatchFinalArchive": [
@@ -24,63 +24,63 @@
         "sha256": "3341b54fc1622ee9a98ff89932582196242ee5ebb0845f049aa93854ba05feef"
       },
       {
-        "path": "lib/client.canvas.LICENSE.txt",
-        "sha256": "ad1e318e098bcd18d528d6a10dece449aa972b6d3463e4d20bdef03d415eb8d7"
-      },
-      {
         "path": "lib/client.graph.js",
         "sha256": "3ac2891696425611aad7412461e6dfd80fe0a839dc08469af7323d3fa0aed0ba"
       },
       {
-        "path": "lib/client.graph.LICENSE.txt",
-        "sha256": "a98d6d2326d602d3fca1fa8abecff82bf0807c7f99ddd3a1f7aa322c094df53f"
-      },
-      {
         "path": "lib/client.js",
-        "sha256": "960c52a2c8ed5bc0e33adbaf3bad85d62b10706cc3264b01d68c1464a7fe0e20"
-      },
-      {
-        "path": "lib/client.LICENSE.txt",
-        "sha256": "ae4f3e5643b407362539b6e9ef7406c7467eed701ef06258e1a3c31f67de5ba0"
+        "sha256": "9017b3700ac267966ab8d7866225a1d28473dcc56eb2d34b69d873c55542c4de"
       },
       {
         "path": "lib/index.js",
-        "sha256": "34ba200330833c99caa6b667af0e116dfeef689d6cfcef4a359b13da83b51b51"
+        "sha256": "2edc3fbbb1641c1ef9c8d60a75d54369d314180195540b9cb8cf911d09b6e3fa"
+      },
+      {
+        "path": "lib/typert.host.js",
+        "sha256": "54c4ad6393e34109a751dd929b0ed5aa2d59b32f002de8d7d1828344301e9235"
+      },
+      {
+        "path": "lib/typert.remote-client.js",
+        "sha256": "f5b2120506d237cd40120e979c5bf54ddccad54291922652ebf641c1a69ecc9a"
+      },
+      {
+        "path": "lib/types/types.js",
+        "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+      },
+      {
+        "path": "lib/typert.remote-client.d.ts.map",
+        "sha256": "b937d4f418ef7ad7ba36e2bb24c181db8ac161831b1025ae73db0d20b3f764f8"
       },
       {
         "path": "lib/typert.host.d.ts",
         "sha256": "5e2d26ee86d0fe170dac8cd3f5854e67bdea334c57f40a5766ace57b8304c17d"
       },
       {
-        "path": "lib/typert.host.js",
-        "sha256": "9f9ff8438d80a79459598db39677c99c5848a36b5262e89863b7a3c0e4c8ba1b"
-      },
-      {
         "path": "lib/typert.remote-client.d.ts",
-        "sha256": "067bfe6b714a07569c6980dd96b748453553018d54af8186e980f480e328a22d"
-      },
-      {
-        "path": "lib/typert.remote-client.d.ts.map",
-        "sha256": "795e299877bb0ad6e1ae6206b248c1ad3fc3d56f9982db6ee5c42154a40c6cf8"
-      },
-      {
-        "path": "lib/typert.remote-client.js",
-        "sha256": "6f36545b5940b8b8b9e0dfa41c1d5331b9f9eab32e7f973f9dab74f40f0f07c9"
+        "sha256": "90e59563d8f2d5b1886f19e35269d2942cc513ce43c10d3e905e4ca4a1028bba"
       },
       {
         "path": "lib/types/types.d.ts",
-        "sha256": "1640a0b669d9dbadd7e4fd8d88beddb0869f9f3b68103708618b25910cb45f4e"
+        "sha256": "f2564a3c1b0b116026371dd28df9145e89a3de29d3a1ca239eb7f0fa1fe033d0"
       },
       {
-        "path": "lib/types/types.js",
-        "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+        "path": "lib/client.canvas.LICENSE.txt",
+        "sha256": "ad1e318e098bcd18d528d6a10dece449aa972b6d3463e4d20bdef03d415eb8d7"
+      },
+      {
+        "path": "lib/client.graph.LICENSE.txt",
+        "sha256": "a98d6d2326d602d3fca1fa8abecff82bf0807c7f99ddd3a1f7aa322c094df53f"
+      },
+      {
+        "path": "lib/client.LICENSE.txt",
+        "sha256": "ae4f3e5643b407362539b6e9ef7406c7467eed701ef06258e1a3c31f67de5ba0"
       }
     ]
   },
   "package": {
-    "filename": "eh3-dsh-ai-carry-0.2.0.tgz",
-    "bytes": 15854166,
-    "sha256": "889234a714d9d551b27643ac83e01cc28da46d1126cf6a1b889a51efb90528a1",
+    "filename": "eh3-dsh-ai-carry-0.3.0.tgz",
+    "bytes": 15840025,
+    "sha256": "7e9aa81e9f0d2e048910eda8ff2eebf5bb4cf6644f0d4394791777f5c0dd8459",
     "files": 144,
     "archiveAllowlistCheck": "passed",
     "privatePathAndCredentialPatternFindings": [],
@@ -139,7 +139,7 @@
     "decisionActor": "Owner UI automation in the authorized test; not personal user acceptance",
     "credentialsCopied": false,
     "executedVersion": "0.1.0",
-    "currentVersionCheck": "Original real results and committed receipt reopened in 0.2.0; ordinary retrieval checked from a new installed session. No new model request in this UI revision."
+    "currentVersionCheck": "Historic genuine model results and committed receipt reopened in 0.3.0; ordinary retrieval checked from a new installed session. No new model request in this UI revision."
   },
   "ui": {
     "surface": "Installed native Harness Web Client workspace context menu and main slot",
@@ -157,6 +157,12 @@
     "checks": [
       "workspace-menu-opens-exact-instance-home",
       "actual-chinese-glyphs-render-with-local-MiSans",
+      "home-four-real-counts-with-no-body-path-or-task-list",
+      "shared-category-travels-with-stable-text-and-cleans-up",
+      "title-to-real-body-source-and-return-focus",
+      "early-reversal-keeps-current-visible-pose",
+      "empty-category-and-live-reduced-motion-settle-correctly",
+      "full-instance-identity-is-one-level-below-home",
       "1100px-home-no-horizontal-overflow",
       "switch-B-opens-B-home",
       "A-B-new-task-drafts-isolated-and-restored",
@@ -180,21 +186,50 @@
         }
       ]
     },
-    "userVisualAcceptance": false
+    "userVisualAcceptance": "Pending user trial of 0.3.0; confirmed design direction is not visual acceptance.",
+    "motion": {
+      "mechanism": "Shared category identity and expanding surface; title-to-detail and return with restored focus; GSAP owns the sequence.",
+      "capture": {
+        "frames": 116,
+        "durationMs": 5945,
+        "source": "Actual native Harness Web Client screencast; original frame timing; plugin crop only"
+      },
+      "reversal": {
+        "before": {
+          "x": 720,
+          "y": 262,
+          "w": 90,
+          "h": 42
+        },
+        "after": {
+          "x": 720,
+          "y": 262,
+          "w": 90,
+          "h": 42
+        }
+      },
+      "evidence": "docs/screenshots/drill-down.gif",
+      "review": "Continuous captured phases, endpoints, text metrics and interrupted reversal inspected. No desktop-wrapper motion claim."
+    }
   },
   "desktopInstall": {
-    "version": "0.2.0",
+    "version": "0.3.0",
     "otherDependenciesUnchanged": true,
     "patchUnchanged": true,
     "clientMatches": true,
     "hostMatches": true,
     "openedByAutomation": false,
-    "limitation": "Desktop screenshot capture timed out and pointer geometry was unavailable; native desktop visual/input acceptance remains unverified."
+    "limitation": "Desktop accessibility entry is present. Pointer geometry unavailable; window capture timed out. Installed bytes verified; opening and visual trial in the desktop wrapper remain unverified."
   },
   "limits": [
     "Desktop shell focus/input/window experience, other operating systems and other Harness versions were not validated.",
     "No production instance learning write was performed; long-term learning effectiveness and human visual acceptance remain unverified.",
     "Reinstalling the same package is not a cross-version migration test.",
     "Upstream Zod 4.4.3 advisory GHSA-mrhx-c7xc-m3w5 remains; the host shared dependency was not upgraded."
-  ]
+  ],
+  "dependencyAudit": {
+    "findings": "3 high findings from the existing external Harness Zod peer chain (oversized constrained collection memory exhaustion).",
+    "scope": "zod is external to plugin runtime bundles; no dependencies changed in this revision. Host versions retained for compatibility.",
+    "action": "No unrelated Harness upgrade performed."
+  }
 }

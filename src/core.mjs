@@ -2,7 +2,7 @@ import { createHash, randomUUID } from 'node:crypto';
 import { existsSync, readFileSync, writeFileSync, renameSync, mkdirSync, realpathSync, lstatSync, openSync, fsyncSync, closeSync, unlinkSync } from 'node:fs';
 import { hostname } from 'node:os';
 import { resolve, relative, isAbsolute, sep } from 'node:path';
-import { parseSectionedToml, validateInstanceManifestStructure, loadTrustedDomainEnvelope, queryFormalAssetShortlist, inspectShortlistedFormalAsset } from '../vendor/ai-carry/dashboard/scripts/asset-route-contract.mjs';
+import { parseSectionedToml, validateInstanceManifestStructure, loadTrustedDomainEnvelope, queryFormalAssetShortlist, inspectShortlistedFormalAsset, inspectAssetRoute } from '../vendor/ai-carry/dashboard/scripts/asset-route-contract.mjs';
 import { normalizeRequest, buildFormalProposal, prepare, confirm, stableReadJson, verifyOrdinaryRecall } from '../vendor/ai-carry/dashboard/scripts/learning-save-cli.mjs';
 import { withInstanceWriteLock } from '../vendor/ai-carry/dashboard/scripts/instance-write-lock.mjs';
 import { buildSnapshotCandidate } from '../vendor/ai-carry/dashboard/scripts/snapshot-source-builder.mjs';
@@ -80,6 +80,18 @@ export class CarryCore {
       result.bindings=this.state.bindings.map(b=>b.id===binding.id?result.binding:bindings.find(x=>x.id===b.id)??b);
     }catch(error){result.issue=error.code==='ENOENT'?'这个工作区尚未找到可用的 AI Carry 实例。请从实例根目录打开。':error instanceof CarryError?error.message:'这个目录的实例资料未通过检查。请核对实例根目录与正式文件。';}
     return clone(result);
+  }
+  assetDetail(workspace,assetId,bindingId){
+    bounded(assetId,160,'积累编号');
+    const binding=this.binding(bindingId),facts=identity(workspace.path);
+    requireValue(binding.realRoot===facts.realRoot&&binding.instanceId===facts.instanceId,'workspace','实例与当前工作区不一致，请重新打开实例首页。');
+    const {envelope}=loadTrustedDomainEnvelope(facts.realRoot);
+    const route=envelope.routes.find(r=>r.id===assetId&&Object.hasOwn(targets,r.asset_kind));
+    requireValue(route,'asset','这条积累已不在当前实例中，请刷新列表。');
+    // Browsing never grants protected-read confirmation or task execution authority.
+    const inspected=inspectAssetRoute(facts.realRoot,envelope,assetId);
+    const readable=['load-bounded-body','bounded-section-only'].includes(inspected.decision);
+    return clone({id:route.id,title:route.title,summary:route.summary,kind:route.asset_kind,scope:route.scope??[],state:route.state,source:route.target,conditions:route.conditions??[],excludes:route.excludes??[],body:readable?inspected.body:'',hash:readable?hash(inspected.body):'',partial:inspected.decision==='bounded-section-only',available:readable,message:readable?'':inspected.decision==='split-required'?'这条内容较长，请进入任务后按需读取。':inspected.requiresReadConfirmation||/confirmation/.test(inspected.decision)?'这条内容需要读取确认，请进入任务后选择。':'这条内容暂不可读取，已保留它的登记信息。'});
   }
   publicTask(t){const copy=clone(t);for(const candidate of copy.learning){if(candidate.preview){delete candidate.preview.confirmationRef;delete candidate.preview.fingerprint;delete candidate.preview.requestFile;}}return copy;}
   bind(root){const facts=identity(root);const id=hash(`${facts.realRoot.toLocaleLowerCase('en')}\0${facts.instanceId}`).slice(0,24);let binding=this.state.bindings.find(x=>x.id===id);if(!binding){binding={id,...facts};this.state.bindings.push(binding);this.persist();}return this.view();}

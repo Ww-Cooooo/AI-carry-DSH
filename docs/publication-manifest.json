@@ -36,8 +36,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 12725,
-      "sha256": "db39a9f8a2d9d966e39203f81e03dfcc953eb67c4bf743e6cb43d0b2202fc1cf"
+      "bytes": 12890,
+      "sha256": "97b2313b8be1ca6538680ed5a2dc265b1f8595b2b08cb6b8af0f6b9cf5763b80"
     },
     {
       "path": "THIRD_PARTY_LICENSES.md",
@@ -46,8 +46,8 @@
     },
     {
       "path": "VALIDATION.md",
-      "bytes": 6776,
-      "sha256": "617bec0ba6401938facaba3fb73bb40860404025af63ef395d9b22db27a40a09"
+      "bytes": 8434,
+      "sha256": "063805be77b1395b6c05056f84ee327c0c6fcf42a4d97477485a3ff8b0f2ab3a"
     },
     {
       "path": "assets/fonts/MiSans-Medium.woff2",
@@ -75,9 +75,14 @@
       "sha256": "7341cc3ba92d462b6637e0cb45b224d40b947266331439e89ea55598123fa275"
     },
     {
+      "path": "docs/screenshots/drill-down.gif",
+      "bytes": 2381885,
+      "sha256": "438ede4171734769bb3a32e73dba834be5af9c1a8c5eeac993f42605558b48cc"
+    },
+    {
       "path": "docs/screenshots/native-home.png",
-      "bytes": 132220,
-      "sha256": "cbe467ab85b32a7cef4959030410815323b14d7c838756b6c4be8d1ef887910d"
+      "bytes": 48597,
+      "sha256": "912f245b368d9c892c8da036d559ca34897b6d5fce5a9271002ac25a7c312286"
     },
     {
       "path": "docs/screenshots/native-learning.png",
@@ -181,13 +186,13 @@
     },
     {
       "path": "lib/client.js",
-      "bytes": 20653905,
-      "sha256": "960c52a2c8ed5bc0e33adbaf3bad85d62b10706cc3264b01d68c1464a7fe0e20"
+      "bytes": 20608112,
+      "sha256": "9017b3700ac267966ab8d7866225a1d28473dcc56eb2d34b69d873c55542c4de"
     },
     {
       "path": "lib/index.js",
-      "bytes": 619888,
-      "sha256": "34ba200330833c99caa6b667af0e116dfeef689d6cfcef4a359b13da83b51b51"
+      "bytes": 622301,
+      "sha256": "2edc3fbbb1641c1ef9c8d60a75d54369d314180195540b9cb8cf911d09b6e3fa"
     },
     {
       "path": "lib/typert.host.d.ts",
@@ -196,28 +201,28 @@
     },
     {
       "path": "lib/typert.host.js",
-      "bytes": 221003,
-      "sha256": "9f9ff8438d80a79459598db39677c99c5848a36b5262e89863b7a3c0e4c8ba1b"
+      "bytes": 225957,
+      "sha256": "54c4ad6393e34109a751dd929b0ed5aa2d59b32f002de8d7d1828344301e9235"
     },
     {
       "path": "lib/typert.remote-client.d.ts",
-      "bytes": 7339,
-      "sha256": "067bfe6b714a07569c6980dd96b748453553018d54af8186e980f480e328a22d"
+      "bytes": 7758,
+      "sha256": "90e59563d8f2d5b1886f19e35269d2942cc513ce43c10d3e905e4ca4a1028bba"
     },
     {
       "path": "lib/typert.remote-client.d.ts.map",
-      "bytes": 713,
-      "sha256": "795e299877bb0ad6e1ae6206b248c1ad3fc3d56f9982db6ee5c42154a40c6cf8"
+      "bytes": 746,
+      "sha256": "b937d4f418ef7ad7ba36e2bb24c181db8ac161831b1025ae73db0d20b3f764f8"
     },
     {
       "path": "lib/typert.remote-client.js",
-      "bytes": 220839,
-      "sha256": "6f36545b5940b8b8b9e0dfa41c1d5331b9f9eab32e7f973f9dab74f40f0f07c9"
+      "bytes": 225793,
+      "sha256": "f5b2120506d237cd40120e979c5bf54ddccad54291922652ebf641c1a69ecc9a"
     },
     {
       "path": "lib/types/types.d.ts",
-      "bytes": 2581,
-      "sha256": "1640a0b669d9dbadd7e4fd8d88beddb0869f9f3b68103708618b25910cb45f4e"
+      "bytes": 2758,
+      "sha256": "f2564a3c1b0b116026371dd28df9145e89a3de29d3a1ca239eb7f0fa1fe033d0"
     },
     {
       "path": "lib/types/types.js",
@@ -837,12 +842,12 @@
     {
       "path": "package-lock.json",
       "bytes": 103836,
-      "sha256": "12ca157bfe2e9e7cc57c41aa48069b134639b37e8a4a67ade5d583f7b1e8a8ac"
+      "sha256": "73f01a4a6a98704cd7c8370f6af11d882be8692e1b7c0874849832024babdf6e"
     },
     {
       "path": "package.json",
       "bytes": 3169,
-      "sha256": "f2e9149b1f10cb617de3e5e67f92f47e485d7d4b9b6e01dfcd61b9fd2f5d4e4d"
+      "sha256": "d96445089f9bf3cdcf20293234880c6915e15d6a7846960bbfaf4399c5a00eb5"
     },
     {
       "path": "scripts/build.mjs",
@@ -876,18 +881,23 @@
     },
     {
       "path": "src/client.tsx",
-      "bytes": 31988,
-      "sha256": "3f96f2087ff88b7436787e39ac43964a58fcb95909025e5a7268cc8e4e34410f"
+      "bytes": 31589,
+      "sha256": "f579b9cba1829ec5e96e918905337ee6f6143d1a12b50c342e940214755debb7"
     },
     {
       "path": "src/core.d.mts",
-      "bytes": 1637,
-      "sha256": "2b9c2a4ee1a747d9306b19c83302b9404acd715dda3f8fb7bd552163f30d9423"
+      "bytes": 1729,
+      "sha256": "038b4448be914cc04f4a442bd1302aefddb767311e78c4ce10f057a88fa6b646"
     },
     {
       "path": "src/core.mjs",
-      "bytes": 29777,
-      "sha256": "9c1d7ac009cbefb341e2ee58251689141c03ea6d628eaaf7186f70fee6b7d2a3"
+      "bytes": 31308,
+      "sha256": "375627ade57fae2dd7c4a147e3818efbb5456314edda57a0b271d7b614d530a1"
+    },
+    {
+      "path": "src/drill-motion.ts",
+      "bytes": 3640,
+      "sha256": "45f58268ba976d69394b1113da3f35ce1d94fe48e3bfd85a8834743eabaaa706"
     },
     {
       "path": "src/graph.ts",
@@ -896,8 +906,8 @@
     },
     {
       "path": "src/home.tsx",
-      "bytes": 14047,
-      "sha256": "284c29410c1fca4ba14bf25f3028109b7b68d42befc1dd4b8f1c006e353af12c"
+      "bytes": 17475,
+      "sha256": "7704184ce0bcc8f485f57d9a161462981f8b96a4d899fcdda2ff30c20780804d"
     },
     {
       "path": "src/index.ts",
@@ -905,24 +915,29 @@
       "sha256": "88a7aa5fdfbf41178eb1f76c8547ed8712378b82defeeb86ad19e46051de01db"
     },
     {
+      "path": "src/reading.tsx",
+      "bytes": 476,
+      "sha256": "b7c8d2bd347060d6c9fffae8be9d1de9c2c1e4741a1f6f0e917d30b7635ef824"
+    },
+    {
       "path": "src/service.ts",
-      "bytes": 11022,
-      "sha256": "cc0e6bb4fa10219dc007a457e0c89e56e2e0f868f8b8361a77dd03e0e5836458"
+      "bytes": 11427,
+      "sha256": "7cf366cecd3539a4899e4a91e7ff46071cc5aacda6c4c2070ea1dc49fb7c5892"
     },
     {
       "path": "src/style.css",
-      "bytes": 16777,
-      "sha256": "4e803571c73b367c0bb012b172ef880264dc4b2ed4802c72ea24eb35e124ed79"
+      "bytes": 23184,
+      "sha256": "487babb5728fa717c12b3262d7ce7ad220d0c48eadb3721ccdc0fcb0cd0d7297"
     },
     {
       "path": "src/types.ts",
-      "bytes": 2581,
-      "sha256": "1640a0b669d9dbadd7e4fd8d88beddb0869f9f3b68103708618b25910cb45f4e"
+      "bytes": 2758,
+      "sha256": "f2564a3c1b0b116026371dd28df9145e89a3de29d3a1ca239eb7f0fa1fe033d0"
     },
     {
       "path": "test/core.test.mjs",
-      "bytes": 13786,
-      "sha256": "f5650cb33063264df0f335d1a525a9c233c759f2d6ed89bf680c70a23ea15334"
+      "bytes": 15413,
+      "sha256": "2d2ee531853118611c173c517725fc229100e5058bb079f1b719dd95c221bdac"
     },
     {
       "path": "test/crash-writer.mjs",
@@ -1055,5 +1070,5 @@
       "sha256": "e5014649144a9d40fd1fe267d551258234b46f94c2e129e1085e7d14ff1994a5"
     }
   ],
-  "version": "0.2.0"
+  "version": "0.3.0"
 }

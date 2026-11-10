@@ -19,6 +19,24 @@ async function context(){
   return {core,id,a,b,run,sessions,events,submissions:()=>submissions};
 }
 const request={kind:'sop',title:'提纲的证据检查',summary:'在内容提纲中给每个要点补上依据和边界',triggers:['检查提纲依据'],scope:['内容提纲'],steps:['逐条列出要点所依据的材料','没有依据的内容标为待核实'],failure_handling:['保留尚未核实的标记'],completion_checks:['每个要点都有依据或待核实标记']};
+test('explicit detail reads stay in the selected root and do not create tasks or change formal files',async()=>{
+ const c=await context();try{
+  const a={id:'test-workspace',path:c.a,name:'A'},b={id:'B-workspace',path:c.b,name:'B'};
+  const aId=c.core.entry(a).binding.id,bId=c.core.entry(b).binding.id;
+  const selected=c.core.view(c.id).task.selection.assetId,state=JSON.stringify(c.core.view());
+  const detail=c.core.assetDetail(a,selected,aId);assert.equal(detail.available,true);assert.ok(detail.body);assert.equal(detail.hash,hash(detail.body));
+  const original=await readFile(resolve(c.a,detail.source),'utf8');
+  const bFile=resolve(c.b,detail.source);await writeFile(bFile,(await readFile(bFile,'utf8'))+'\n只属于实例 B 的正文。\n');
+  assert.match(c.core.assetDetail(b,selected,bId).body,/只属于实例 B/);assert.doesNotMatch(c.core.assetDetail(a,selected,aId).body,/只属于实例 B/);
+  assert.throws(()=>c.core.assetDetail(a,'../../instance/manifest.toml',aId),/不在当前实例/);
+  assert.throws(()=>c.core.assetDetail({id:'invalid',path:c.run,name:'invalid'},selected,aId));
+  assert.throws(()=>c.core.assetDetail(b,selected,aId),/实例与当前工作区/);
+  assert.equal(JSON.stringify(c.core.view()),state);assert.equal(await readFile(resolve(c.a,detail.source),'utf8'),original);
+  const manifest=resolve(c.a,'instance/manifest.toml'),prior=await readFile(manifest,'utf8');
+  await writeFile(manifest,prior.replace('eh3-fixture-a','eh3-fixture-replaced'));
+  try{assert.throws(()=>c.core.assetDetail(a,selected,aId));}finally{await writeFile(manifest,prior)}
+ }finally{c.core.close()}
+});
 test('a different task in the same session retains the earlier task and duplicate opens are stable',async()=>{const c=await context(),binding=c.core.view(c.id).task.bindingId;const next=await c.core.openTask(binding,'test-session','test-workspace','整理下一份材料');assert.notEqual(next.task.id,c.id);assert.equal(next.task.title,'整理下一份材料');assert.equal(c.core.view(c.id).task.selection.overrides,'本次提纲 600 字');assert.equal((await c.core.openTask(binding,'test-session','test-workspace','整理下一份材料')).task.id,next.task.id);c.core.close()});
 test('workspace entry identifies the exact root, isolates tasks and never falls back to another instance',async()=>{const c=await context();const before=await readFile(resolve(c.a,'instance/maps/domain-map.toml'));const list=c.core.entry();assert.equal(list.binding,null);assert.equal(list.tasks.length,0);assert.equal(list.bindings.length,2);const a=c.core.entry({id:'test-workspace',path:c.a,name:'A workspace'});assert.equal(a.binding.instanceId,'eh3-fixture-a');assert.ok(a.binding.mission);assert.ok(a.assets.some(x=>x.kind==='sop'));assert.ok(a.assets.every(x=>!('body' in x)));assert.equal(a.tasks.length,1);const b=c.core.entry({id:'B-workspace',path:c.b,name:'B workspace'});assert.equal(b.binding.instanceId,'eh3-fixture-b');assert.equal(b.tasks.length,0);assert.equal(c.core.entry({id:'other',path:c.run,name:'not an instance'}).binding,null);assert.ok(c.core.entry({id:'other',path:c.run,name:'not an instance'}).issue);assert.deepEqual(await readFile(resolve(c.a,'instance/maps/domain-map.toml')),before);assertWorkspaceTarget({path:c.a,sessionIds:['a']},'a',c.a);assert.throws(()=>assertWorkspaceTarget({path:c.b,sessionIds:['a']},'a',c.a),/根目录工作区/);assert.throws(()=>assertWorkspaceTarget({path:c.a,sessionIds:['a']},'b',c.a),/目标会话/);c.core.close()});
 test('homepage refresh reflects current manifest identity without moving saved task drafts',async()=>{const c=await context(),file=resolve(c.a,'instance/manifest.toml'),original=await readFile(file,'utf8');await writeFile(file,original.replace(/display_name = "[^"]*"/,'display_name = "已改名的测试实例"'));const v=c.core.entry({id:'test-workspace',path:c.a,name:'A'});assert.equal(v.binding.name,'已改名的测试实例');assert.equal(v.tasks[0].id,c.id);assert.equal(c.core.view(c.id).task.selection.overrides,'本次提纲 600 字');c.core.close()});

@@ -4,11 +4,12 @@ import type {
   TypertRemoteInfo,
   TypertRemoteMethod,
 } from '@deepseek-ai/dsh-typert-protocol'
-import type { DraftInput, EntryView, SessionOption, View } from 'eh3-dsh-ai-carry/types'
+import type { AssetDetail, DraftInput, EntryView, SessionOption, View } from 'eh3-dsh-ai-carry/types'
 
 declare module '@deepseek-ai/dsh-typert-protocol' {
   interface TypertRemoteNamespace$6568332d61692d6361727279 {
     adjust: (taskId: string, overrides: string) => Promise<RemoteResult<View>>
+    assetDetail: (workspaceId: string, assetId: string, bindingId: string) => Promise<RemoteResult<AssetDetail>>
     bind: (root: string) => Promise<RemoteResult<View>>
     decide: (taskId: string, candidateId: string, previewId: string, revision: number, choice: 'keep' | 'observe' | 'remind' | 'discard' | 'once', operationId: string, remindAt: string) => Promise<RemoteResult<View>>
     deliver: (taskId: string, operationId: string) => Promise<RemoteResult<View>>
@@ -32,6 +33,7 @@ declare module '@deepseek-ai/dsh-typert-protocol' {
   }
   interface TypertRemoteMap {
     'eh3-ai-carry/adjust': (taskId: string, overrides: string) => Promise<RemoteResult<View>>
+    'eh3-ai-carry/assetDetail': (workspaceId: string, assetId: string, bindingId: string) => Promise<RemoteResult<AssetDetail>>
     'eh3-ai-carry/bind': (root: string) => Promise<RemoteResult<View>>
     'eh3-ai-carry/decide': (taskId: string, candidateId: string, previewId: string, revision: number, choice: 'keep' | 'observe' | 'remind' | 'discard' | 'once', operationId: string, remindAt: string) => Promise<RemoteResult<View>>
     'eh3-ai-carry/deliver': (taskId: string, operationId: string) => Promise<RemoteResult<View>>
@@ -60,6 +62,7 @@ declare module '@deepseek-ai/dsh-typert-protocol' {
 
 export declare const TYPERT_REMOTE: TypertRemoteInfo<{
   readonly 'eh3-ai-carry/adjust': TypertRemoteMethod<{ readonly 'taskId': string; readonly 'overrides': string }, View>
+  readonly 'eh3-ai-carry/assetDetail': TypertRemoteMethod<{ readonly 'workspaceId': string; readonly 'assetId': string; readonly 'bindingId': string }, AssetDetail>
   readonly 'eh3-ai-carry/bind': TypertRemoteMethod<{ readonly 'root': string }, View>
   readonly 'eh3-ai-carry/decide': TypertRemoteMethod<{ readonly 'taskId': string; readonly 'candidateId': string; readonly 'previewId': string; readonly 'revision': number; readonly 'choice': 'keep' | 'observe' | 'remind' | 'discard' | 'once'; readonly 'operationId': string; readonly 'remindAt': string }, View>
   readonly 'eh3-ai-carry/deliver': TypertRemoteMethod<{ readonly 'taskId': string; readonly 'operationId': string }, View>
