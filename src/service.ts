@@ -6,9 +6,10 @@ import type {} from '@deepseek-ai/dsh-workspace';
 import type {SessionPromptRequest,SessionPageRequest} from '@deepseek-ai/dsh-api-session-controller/types';
 import { resolve } from 'node:path';
 import { homedir } from 'node:os';
+import { realpathSync } from 'node:fs';
 import { z } from 'zod';
-import { CarryCore, CarryError } from './core.mjs';
-import type { View, DraftInput, SessionOption } from './types.ts';
+import { CarryCore, CarryError, assertWorkspaceTarget } from './core.mjs';
+import type { View, DraftInput, SessionOption, EntryView } from './types.ts';
 export interface Config {stateDirectory?:string}
 
 declare module '@deepseek-ai/dsh-typert-protocol' {interface RemoteErrorDetailsMap {'eh3-ai-carry/rejected':{reason:string}}}
@@ -27,9 +28,10 @@ export default class AiCarry extends TypertRemoteService {
   constructor(ctx:Context,config:Config={}){
     super(ctx,'eh3AiCarry',{namespace:'eh3-ai-carry'});
     this.core=new CarryCore(config.stateDirectory??resolve(homedir(),'.ai-carry','harness-control'),{
-      check:async(sessionId,workspaceId)=>{
+      check:async(sessionId,workspaceId,instanceRoot)=>{
         const workspace=ctx.workspaceRegistry.list().find(w=>w.id===workspaceId);
         if(!workspace||!workspace.sessionIds.some(id=>id===sessionId))throw new CarryError('session','目标会话已不属于所选工作区，请重新选择。');
+        if(instanceRoot)assertWorkspaceTarget(workspace,sessionId,instanceRoot);
       },
       prompt:(sessionId,requestId,text)=>ctx.sessionController.prompt({sessionId:sessionId as SessionPromptRequest['sessionId'],requestId:requestId as SessionPromptRequest['requestId'],mode:'queue',content:[{type:'text',text}]} as SessionPromptRequest,signal()),
       events:async(sessionId)=>{
@@ -61,8 +63,11 @@ export default class AiCarry extends TypertRemoteService {
     }}));
   }
   private user(){if(this.ctx.invocation?.peer.principal.kind!=='owner')throw new RemoteError('eh3-ai-carry/rejected','请由当前用户在插件中执行这项操作。',{reason:'user-required'});}
-  private async run(work:()=>View|Promise<View>):Promise<View>{try{return await work();}catch(error){if(error instanceof CarryError)throw new RemoteError('eh3-ai-carry/rejected',error.message,{reason:error.code});const e=error as Error & {code?:string};if(['ENOENT','EACCES','EPERM','EBUSY'].includes(e.code??''))throw new RemoteError('eh3-ai-carry/rejected','暂时无法访问实例文件。请检查目录是否可用；已有成果和草稿已保留。',{reason:e.code??'file'});throw error;}}
-  @Remote('ping') ping():{product:string;version:string;connectedAt:string}{return {product:'AI Carry',version:'0.1.0',connectedAt:new Date().toISOString()};}
+  private async run<T>(work:()=>T|Promise<T>):Promise<T>{try{return await work();}catch(error){if(error instanceof CarryError)throw new RemoteError('eh3-ai-carry/rejected',error.message,{reason:error.code});const e=error as Error & {code?:string};if(['ENOENT','EACCES','EPERM','EBUSY'].includes(e.code??''))throw new RemoteError('eh3-ai-carry/rejected','暂时无法访问实例文件。请检查目录是否可用；已有成果和草稿已保留。',{reason:e.code??'file'});throw error;}}
+  @Remote('ping') ping():{product:string;version:string;connectedAt:string}{return {product:'AI Carry',version:'0.2.0',connectedAt:new Date().toISOString()};}
+  @Remote('entry') entry(workspaceId:string):Promise<EntryView>{this.user();return this.run(()=>{if(!workspaceId)return this.core.entry();const w=this.ctx.workspaceRegistry.list().find(w=>w.id===workspaceId);if(!w)throw new CarryError('workspace','这个工作区已不存在，请从 Harness 工作区重新打开。');return this.core.entry({id:w.id,path:w.path,name:w.title});});}
+  @Remote('openInstance') openInstance(bindingId:string):Promise<EntryView>{this.user();return this.run(async()=>{const b=this.core.binding(bindingId);const w=await this.ctx.workspaceRegistry.create(b.realRoot,b.name);return this.core.entry({id:w.id,path:w.path,name:w.title});});}
+  @Remote('openRoot') openRoot(root:string):Promise<EntryView>{this.user();return this.run(async()=>{const v=this.core.bind(root);const physicalRoot=realpathSync(root);const b=v.bindings.find(b=>b.realRoot===physicalRoot);if(!b)throw new CarryError('binding','实例目录未能连接，请重新检查。');const w=await this.ctx.workspaceRegistry.create(b.realRoot,b.name);return this.core.entry({id:w.id,path:w.path,name:w.title});});}
   @Remote('view') view(taskId:string):Promise<View>{this.user();return this.run(()=>this.core.view(taskId||undefined));}
   @Remote('bind') bind(root:string):Promise<View>{this.user();return this.run(()=>this.core.bind(root));}
   @Remote('unbind') unbind(bindingId:string):Promise<View>{this.user();return this.run(()=>this.core.unbind(bindingId));}

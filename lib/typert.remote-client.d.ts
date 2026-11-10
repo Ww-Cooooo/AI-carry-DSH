@@ -4,7 +4,7 @@ import type {
   TypertRemoteInfo,
   TypertRemoteMethod,
 } from '@deepseek-ai/dsh-typert-protocol'
-import type { DraftInput, SessionOption, View } from 'eh3-dsh-ai-carry/types'
+import type { DraftInput, EntryView, SessionOption, View } from 'eh3-dsh-ai-carry/types'
 
 declare module '@deepseek-ai/dsh-typert-protocol' {
   interface TypertRemoteNamespace$6568332d61692d6361727279 {
@@ -13,8 +13,11 @@ declare module '@deepseek-ai/dsh-typert-protocol' {
     decide: (taskId: string, candidateId: string, previewId: string, revision: number, choice: 'keep' | 'observe' | 'remind' | 'discard' | 'once', operationId: string, remindAt: string) => Promise<RemoteResult<View>>
     deliver: (taskId: string, operationId: string) => Promise<RemoteResult<View>>
     edit: (taskId: string, candidateId: string, expectedRevision: number, request: DraftInput) => Promise<RemoteResult<View>>
+    entry: (workspaceId: string) => Promise<RemoteResult<EntryView>>
     find: (taskId: string, query: string) => Promise<RemoteResult<View>>
     observe: (taskId: string) => Promise<RemoteResult<View>>
+    openInstance: (bindingId: string) => Promise<RemoteResult<EntryView>>
+    openRoot: (root: string) => Promise<RemoteResult<EntryView>>
     openTask: (bindingId: string, sessionId: string, workspaceId: string, title: string) => Promise<RemoteResult<View>>
     ping: () => Promise<RemoteResult<{ product: string; version: string; connectedAt: string; }>>
     preview: (taskId: string, candidateId: string) => Promise<RemoteResult<View>>
@@ -33,8 +36,11 @@ declare module '@deepseek-ai/dsh-typert-protocol' {
     'eh3-ai-carry/decide': (taskId: string, candidateId: string, previewId: string, revision: number, choice: 'keep' | 'observe' | 'remind' | 'discard' | 'once', operationId: string, remindAt: string) => Promise<RemoteResult<View>>
     'eh3-ai-carry/deliver': (taskId: string, operationId: string) => Promise<RemoteResult<View>>
     'eh3-ai-carry/edit': (taskId: string, candidateId: string, expectedRevision: number, request: DraftInput) => Promise<RemoteResult<View>>
+    'eh3-ai-carry/entry': (workspaceId: string) => Promise<RemoteResult<EntryView>>
     'eh3-ai-carry/find': (taskId: string, query: string) => Promise<RemoteResult<View>>
     'eh3-ai-carry/observe': (taskId: string) => Promise<RemoteResult<View>>
+    'eh3-ai-carry/openInstance': (bindingId: string) => Promise<RemoteResult<EntryView>>
+    'eh3-ai-carry/openRoot': (root: string) => Promise<RemoteResult<EntryView>>
     'eh3-ai-carry/openTask': (bindingId: string, sessionId: string, workspaceId: string, title: string) => Promise<RemoteResult<View>>
     'eh3-ai-carry/ping': () => Promise<RemoteResult<{ product: string; version: string; connectedAt: string; }>>
     'eh3-ai-carry/preview': (taskId: string, candidateId: string) => Promise<RemoteResult<View>>
@@ -58,8 +64,11 @@ export declare const TYPERT_REMOTE: TypertRemoteInfo<{
   readonly 'eh3-ai-carry/decide': TypertRemoteMethod<{ readonly 'taskId': string; readonly 'candidateId': string; readonly 'previewId': string; readonly 'revision': number; readonly 'choice': 'keep' | 'observe' | 'remind' | 'discard' | 'once'; readonly 'operationId': string; readonly 'remindAt': string }, View>
   readonly 'eh3-ai-carry/deliver': TypertRemoteMethod<{ readonly 'taskId': string; readonly 'operationId': string }, View>
   readonly 'eh3-ai-carry/edit': TypertRemoteMethod<{ readonly 'taskId': string; readonly 'candidateId': string; readonly 'expectedRevision': number; readonly 'request': DraftInput }, View>
+  readonly 'eh3-ai-carry/entry': TypertRemoteMethod<{ readonly 'workspaceId': string }, EntryView>
   readonly 'eh3-ai-carry/find': TypertRemoteMethod<{ readonly 'taskId': string; readonly 'query': string }, View>
   readonly 'eh3-ai-carry/observe': TypertRemoteMethod<{ readonly 'taskId': string }, View>
+  readonly 'eh3-ai-carry/openInstance': TypertRemoteMethod<{ readonly 'bindingId': string }, EntryView>
+  readonly 'eh3-ai-carry/openRoot': TypertRemoteMethod<{ readonly 'root': string }, EntryView>
   readonly 'eh3-ai-carry/openTask': TypertRemoteMethod<{ readonly 'bindingId': string; readonly 'sessionId': string; readonly 'workspaceId': string; readonly 'title': string }, View>
   readonly 'eh3-ai-carry/ping': TypertRemoteMethod<{  }, { product: string; version: string; connectedAt: string; }>
   readonly 'eh3-ai-carry/preview': TypertRemoteMethod<{ readonly 'taskId': string; readonly 'candidateId': string }, View>

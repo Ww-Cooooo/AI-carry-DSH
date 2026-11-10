@@ -32,7 +32,7 @@
 /assets/*
 !/assets/fonts/
 /assets/fonts/*
-!/assets/fonts/NotoSansSC-variable.woff2
+!/assets/fonts/MiSans-*.woff2
 !/assets/fonts/manifest.json
 !/docs/
 /docs/*

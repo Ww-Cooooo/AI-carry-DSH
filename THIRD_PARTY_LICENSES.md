@@ -1,6 +1,6 @@
 # Third-party components
 
-This prebuilt plugin includes the following production browser code. React, ReactDOM and Harness services are supplied by the host. AI Carry public core modules are Apache-2.0; see NOTICE and vendor/ai-carry/PROVENANCE.json. Noto Sans SC is embedded as a complete WOFF2 under SIL OFL 1.1; see licenses/NotoSansSC-OFL.txt. GSAP and @gsap/react use the GSAP Standard No Charge License, not MIT; see licenses/GSAP-Standard-License.txt.
+This prebuilt plugin includes the following production browser code. React, ReactDOM and Harness services are supplied by the host. AI Carry public core modules are Apache-2.0; see NOTICE and vendor/ai-carry/PROVENANCE.json. MiSans 400/500/600 is embedded unchanged under the Xiaomi MiSans license as part of this application; see licenses/MiSans-License.pdf and assets/fonts/manifest.json. It is not Apache-2.0 and may not be redistributed as a standalone font package. GSAP and @gsap/react use the GSAP Standard No Charge License, not MIT; see licenses/GSAP-Standard-License.txt.
 
 | Package | Version | License | Notice |
 |---|---|---|---|

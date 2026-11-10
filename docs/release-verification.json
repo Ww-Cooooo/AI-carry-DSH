@@ -1,7 +1,7 @@
 {
-  "checkedAt": "2026-11-10T00:48:07.183992+00:00",
+  "checkedAt": "2026-11-10T06:58:32.049177+00:00",
   "project": "AI carry-DSH",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "environment": {
     "os": "Windows",
     "node": "24.16.0",
@@ -10,13 +10,12 @@
     "aiCarry": "2.2.0"
   },
   "sourceBuild": {
-    "scope": "Fresh directory exported from the public Git index; no original AI Carry development repository or local runtime files.",
+    "scope": "Fresh public-index-only directory, independent of the original private AI Carry workspace",
     "dependencyInstall": "npm ci --legacy-peer-deps --ignore-scripts: passed",
-    "build": "npm run build: passed",
-    "typeCheck": "npx --no-install tsc -p tsconfig.client.json: passed",
-    "fixtures": "node scripts/init-fixtures.mjs: synthetic A/B instances initialized",
+    "build": "passed",
+    "typeCheck": "passed",
     "integrationTests": {
-      "passed": 12,
+      "passed": 15,
       "failed": 0
     },
     "runtimeFilesMatchFinalArchive": [
@@ -25,63 +24,63 @@
         "sha256": "3341b54fc1622ee9a98ff89932582196242ee5ebb0845f049aa93854ba05feef"
       },
       {
-        "path": "lib/client.graph.js",
-        "sha256": "3ac2891696425611aad7412461e6dfd80fe0a839dc08469af7323d3fa0aed0ba"
-      },
-      {
-        "path": "lib/client.js",
-        "sha256": "7a798195f428650853ffc780219dab479ca73e7868d13a73fce41466aef7b924"
-      },
-      {
-        "path": "lib/index.js",
-        "sha256": "92b1e2a36cb53e41a48c3662c9c1305a775b349e634700341dc757cb18c88740"
-      },
-      {
-        "path": "lib/typert.host.js",
-        "sha256": "6efe8eb1a53ea3e200d4bc39305a7b1c9457290331abc08347f5791663903b78"
-      },
-      {
-        "path": "lib/typert.remote-client.js",
-        "sha256": "d76ba2c83a6807b416f4b33eb0f5d6c35cdc8d52f418cf193bb354d6dd058e1a"
-      },
-      {
-        "path": "lib/types/types.js",
-        "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
-      },
-      {
-        "path": "lib/typert.remote-client.d.ts.map",
-        "sha256": "4d6cdf151d63838cbabe1110f2973bc53d086016abfc46c29e1241e325baeac7"
-      },
-      {
-        "path": "lib/typert.host.d.ts",
-        "sha256": "5e2d26ee86d0fe170dac8cd3f5854e67bdea334c57f40a5766ace57b8304c17d"
-      },
-      {
-        "path": "lib/typert.remote-client.d.ts",
-        "sha256": "73ec94d760540eba55899c7094277bdd03b13b01f4fe4535a63c954e313d9681"
-      },
-      {
-        "path": "lib/types/types.d.ts",
-        "sha256": "0e17d79613a031e1cf06930eb2f7d8d6497fe37d42754dcac80ce03716913798"
-      },
-      {
         "path": "lib/client.canvas.LICENSE.txt",
         "sha256": "ad1e318e098bcd18d528d6a10dece449aa972b6d3463e4d20bdef03d415eb8d7"
+      },
+      {
+        "path": "lib/client.graph.js",
+        "sha256": "3ac2891696425611aad7412461e6dfd80fe0a839dc08469af7323d3fa0aed0ba"
       },
       {
         "path": "lib/client.graph.LICENSE.txt",
         "sha256": "a98d6d2326d602d3fca1fa8abecff82bf0807c7f99ddd3a1f7aa322c094df53f"
       },
       {
+        "path": "lib/client.js",
+        "sha256": "960c52a2c8ed5bc0e33adbaf3bad85d62b10706cc3264b01d68c1464a7fe0e20"
+      },
+      {
         "path": "lib/client.LICENSE.txt",
         "sha256": "ae4f3e5643b407362539b6e9ef7406c7467eed701ef06258e1a3c31f67de5ba0"
+      },
+      {
+        "path": "lib/index.js",
+        "sha256": "34ba200330833c99caa6b667af0e116dfeef689d6cfcef4a359b13da83b51b51"
+      },
+      {
+        "path": "lib/typert.host.d.ts",
+        "sha256": "5e2d26ee86d0fe170dac8cd3f5854e67bdea334c57f40a5766ace57b8304c17d"
+      },
+      {
+        "path": "lib/typert.host.js",
+        "sha256": "9f9ff8438d80a79459598db39677c99c5848a36b5262e89863b7a3c0e4c8ba1b"
+      },
+      {
+        "path": "lib/typert.remote-client.d.ts",
+        "sha256": "067bfe6b714a07569c6980dd96b748453553018d54af8186e980f480e328a22d"
+      },
+      {
+        "path": "lib/typert.remote-client.d.ts.map",
+        "sha256": "795e299877bb0ad6e1ae6206b248c1ad3fc3d56f9982db6ee5c42154a40c6cf8"
+      },
+      {
+        "path": "lib/typert.remote-client.js",
+        "sha256": "6f36545b5940b8b8b9e0dfa41c1d5331b9f9eab32e7f973f9dab74f40f0f07c9"
+      },
+      {
+        "path": "lib/types/types.d.ts",
+        "sha256": "1640a0b669d9dbadd7e4fd8d88beddb0869f9f3b68103708618b25910cb45f4e"
+      },
+      {
+        "path": "lib/types/types.js",
+        "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
       }
     ]
   },
   "package": {
-    "filename": "eh3-dsh-ai-carry-0.1.0.tgz",
-    "bytes": 8670079,
-    "sha256": "287eff409dae3a766aaceac156e27d9f9d9ff15c335b2a73d88c441dbf75d301",
+    "filename": "eh3-dsh-ai-carry-0.2.0.tgz",
+    "bytes": 15854166,
+    "sha256": "889234a714d9d551b27643ac83e01cc28da46d1126cf6a1b889a51efb90528a1",
     "files": 144,
     "archiveAllowlistCheck": "passed",
     "privatePathAndCredentialPatternFindings": [],
@@ -105,10 +104,18 @@
       "visibleEntry": true
     },
     "managerDisable": {
+      "stage": "enable",
+      "target": "include:eh3-ai-carry",
+      "enabled": false,
+      "changed": true,
       "application": "applied",
       "warnings": []
     },
     "managerEnable": {
+      "stage": "enable",
+      "target": "include:eh3-ai-carry",
+      "enabled": true,
+      "changed": true,
       "application": "applied",
       "warnings": []
     },
@@ -130,10 +137,12 @@
     "originalMethodUnchanged": true,
     "newTaskOrdinaryRecall": true,
     "decisionActor": "Owner UI automation in the authorized test; not personal user acceptance",
-    "credentialsCopied": false
+    "credentialsCopied": false,
+    "executedVersion": "0.1.0",
+    "currentVersionCheck": "Original real results and committed receipt reopened in 0.2.0; ordinary retrieval checked from a new installed session. No new model request in this UI revision."
   },
   "ui": {
-    "surface": "Installed Harness Web Client native sidebar/workspace slots",
+    "surface": "Installed native Harness Web Client workspace context menu and main slot",
     "viewportSizes": [
       [
         1440,
@@ -141,16 +150,46 @@
       ],
       [
         1100,
-        780
+        800
       ]
     ],
+    "browser": "148.0.7778.96",
+    "checks": [
+      "workspace-menu-opens-exact-instance-home",
+      "actual-chinese-glyphs-render-with-local-MiSans",
+      "1100px-home-no-horizontal-overflow",
+      "switch-B-opens-B-home",
+      "A-B-new-task-drafts-isolated-and-restored",
+      "task-query-and-overrides-survive-home-navigation",
+      "existing-real-model-learning-and-formal-receipt-visible",
+      "learning-edit-survives-instance-navigation-without-formal-save",
+      "1100px-learning-no-horizontal-overflow",
+      "reduced-motion-preserves-home-content",
+      "invalid-explicit-workspace-guide-and-escape-close",
+      "global-entry-resolves-actual-current-session-workspace",
+      "native-new-session-and-task-remain-in-B-workspace"
+    ],
     "pageErrors": [],
-    "horizontalOverflowObserved": false,
-    "nativeReturnToSession": true,
-    "remountRetainedTask": true,
-    "keyboardFocusVisible": true,
-    "localChineseFontRendered": true,
-    "reducedMotionChecked": true
+    "fontEvidence": {
+      "fonts": [
+        {
+          "familyName": "MiSans",
+          "postScriptName": "MiSans-Semibold",
+          "isCustomFont": true,
+          "glyphCount": 6
+        }
+      ]
+    },
+    "userVisualAcceptance": false
+  },
+  "desktopInstall": {
+    "version": "0.2.0",
+    "otherDependenciesUnchanged": true,
+    "patchUnchanged": true,
+    "clientMatches": true,
+    "hostMatches": true,
+    "openedByAutomation": false,
+    "limitation": "Desktop screenshot capture timed out and pointer geometry was unavailable; native desktop visual/input acceptance remains unverified."
   },
   "limits": [
     "Desktop shell focus/input/window experience, other operating systems and other Harness versions were not validated.",

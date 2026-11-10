@@ -2,27 +2,27 @@
 
 AI Carry 的 DeepSeek Harness 原生插件，作为独立项目维护。原项目为 [AI-Carry](https://github.com/Ww-Cooooo/AI-Carry)；本仓库只提供 Harness 插件、必要的公共核心模块和合成测试模板。
 
-在 Harness 里选用已有 AI Carry 实例的方法，把本次要求和明确材料送入指定会话；成果产生后，查看有来源的学习建议，编辑内容，再决定是否留下。正式内容继续保存在实例的 Markdown/TOML 文件中。
+从 Harness 的工作区菜单直接打开对应 AI Carry 实例，先看名称、用途和已有积累，再开始任务。把方法与本次要求送入这个工作区的会话；成果产生后，编辑有来源的学习建议，再决定是否留下。正式内容继续保存在实例的 Markdown/TOML 文件中。
 
 依据：0.1.0 在真实 Harness 会话中完成材料投递、模型成果、学习草稿、编辑保存及正文回读；普通检索已找回保存内容。测试使用无私密资料的正式结构实例。
 
 ## 安装与开始
 
-首版面向**已有 AI Carry 2.2.0 实例**的用户，验证环境为 **Windows、DeepSeek Harness 0.2.2-rc.1**。需要 Harness 已配置可用模型，以及其官方 `dsh` 命令；普通 CLI 还需 PATH 中有 `pnpm`，桌面版随附命令使用自带的包管理器。从 [v0.1.0 Release](https://github.com/Ww-Cooooo/AI-carry-DSH/releases/tag/v0.1.0) 下载 `eh3-dsh-ai-carry-0.1.0.tgz`，无需编译源码；同页提供 `SHA256SUMS.txt`。本插件不创建实例；没有实例时，先在 AI Carry 2.2.0 自身的首次建立流程中完成实例建立。测试 fixture 不是你的个人实例。
+本版本面向**已有 AI Carry 2.2.0 实例**的用户，验证环境为 **Windows、DeepSeek Harness 0.2.2-rc.1**。需要 Harness 已配置可用模型，以及其官方 `dsh` 命令；普通 CLI 还需 PATH 中有 `pnpm`，桌面版随附命令使用自带的包管理器。从 [v0.2.0 Release](https://github.com/Ww-Cooooo/AI-carry-DSH/releases/tag/v0.2.0) 下载 `eh3-dsh-ai-carry-0.2.0.tgz`，无需编译源码；同页提供 `SHA256SUMS.txt`。本插件不创建实例；没有实例时，先在 AI Carry 2.2.0 自身的首次建立流程中完成实例建立。测试 fixture 不是你的个人实例。
 
 **平时直接打开 Harness 桌面应用**：它使用 `desktop` profile（配置环境）。在 PowerShell 7 中，把下面示例路径换成你实际安装目录中的 `resources/runtime/cli/bin/dsh.cmd`，在安装包所在目录执行：
 
 ```powershell
 $dsh = 'D:/Apps/DeepSeek Harness/resources/runtime/cli/bin/dsh.cmd'
-& $dsh plugin --profile desktop add ./eh3-dsh-ai-carry-0.1.0.tgz --ignore-scripts
+& $dsh plugin --profile desktop add ./eh3-dsh-ai-carry-0.2.0.tgz --ignore-scripts
 ```
 
-安装后完全退出并重新打开 Harness 桌面应用，继续使用原来的模型配置。这里必须使用桌面版随附命令；普通 CLI 不管理保留的 `desktop` 环境，也不能用 `dsh --profile desktop` 启动桌面应用。此安装入口依据官方桌面 CLI；本版本的实际安装和界面验证范围是下面的独立 Web profile。
+安装后完全退出并重新打开 Harness 桌面应用，继续使用原来的模型配置。这里必须使用桌面版随附命令；普通 CLI 不管理保留的 `desktop` 环境，也不能用 `dsh --profile desktop` 启动桌面应用。此安装入口依据官方桌面 CLI；验证记录分别说明桌面安装与独立 Web profile 的界面检查范围。
 
 **通过命令启动 Harness Web，或已有自定义 profile**：把下面的 `my-profile` 换成平时启动命令中的名字。使用 `dsh web` 的用户就填 `web`；CLI 没有可省略名称的默认 profile。
 
 ```powershell
-dsh plugin --profile my-profile add ./eh3-dsh-ai-carry-0.1.0.tgz --ignore-scripts
+dsh plugin --profile my-profile add ./eh3-dsh-ai-carry-0.2.0.tgz --ignore-scripts
 dsh --profile my-profile
 ```
 
@@ -30,7 +30,7 @@ dsh --profile my-profile
 
 ```powershell
 dsh --profile ai-carry --from-default-profile web --dump-config > $null
-dsh plugin --profile ai-carry add ./eh3-dsh-ai-carry-0.1.0.tgz --ignore-scripts
+dsh plugin --profile ai-carry add ./eh3-dsh-ai-carry-0.2.0.tgz --ignore-scripts
 dsh --profile ai-carry
 ```
 
@@ -40,13 +40,15 @@ dsh --profile ai-carry
 
 若新 profile 没有列出你原来可用的模型，采用上面对应的桌面或已有 Web profile 安装路径，在原来已配置好的环境中使用插件；不必为本插件重新提供密钥。
 
-启动后，侧栏出现 **AI Carry**。先在 Harness 建立目标会话，再进入插件：
+启动后，在 Harness 添加或打开已有实例的**根目录工作区**。这一层包含 `assistant.toml`、`core/manifest.toml` 和 `instance/manifest.toml`，例如 `D:/AI-Carry/my-instance`；不要填它下面的 `instance` 子目录。模板和开发母版不能作为实例。
 
-1. 打开“实例连接”，粘贴已有实例的完整根目录：这一层包含 `assistant.toml`、`core/manifest.toml` 和 `instance/manifest.toml`，例如 `D:/AI-Carry/my-instance`，不要填它下面的 `instance` 子目录。模板和开发母版不能作为实例。
-2. 选择实例与目标会话，写明这次要完成的任务。
-3. 查找方法，展开候选，调整“仅用于这次的要求”，点击“将材料送入目标会话”。
+1. 右击这个工作区，选择 **打开 AI Carry**，直接进入该实例首页。先核对名称、用途与目录，再查看记忆、方法、能力和经验摘要。
+2. 点击“开始新任务”，选择这个工作区的会话，或在这里新建会话，写明这次要完成的任务。
+3. 查找方法，展开候选，调整“仅用于这次的要求”，点击“将材料送入目标会话”。材料只能进入该实例根目录下的会话。
 4. 打开目标会话查看模型运行；回到插件点击“读取成果”，核对实际材料记录与成果。
 5. 点击“请会话提出学习建议”，或根据成果自己写一条建议。在“处理学习”中编辑并查看正式保存预览，再选择“留下”“仅这次”“先观察”“以后提醒”或“不保存”。
+
+侧栏 **AI Carry** 会跟随当前会话的实际工作区。没有明确工作区时，才显示已连接实例清单；明确目录不是实例时，显示该目录的检查与打开指引，不切换到其他实例。未提交的任务标题按实例与工作区保留在当前浏览器标签页；方法要求和学习编辑按任务分别保留。关闭标签页会结束这部分临时草稿，已经保存的任务与学习记录不受影响。
 
 ## 使用与学习分别核对
 
@@ -93,7 +95,7 @@ dsh plugin --profile my-profile remove eh3-dsh-ai-carry
 
 ## 验证范围
 
-已在安装的 Harness Web Client 原生侧栏与主工作区验证材料、成果、来源会话跳转、学习编辑与保存；完成 1440×960 和 1100×780 桌面布局检查、减少动态效果、面板重挂和本地字体检查。[验证记录](VALIDATION.md) 说明测试范围和已知限制。
+0.2.0 已在安装的 Harness Web Client 验证工作区菜单、对应实例首页、实例切换、任务与学习草稿保留、同工作区新建会话、错误目录指引及当前会话入口；完成 1440×960 和 1100×800 布局检查与 MiSans 实际字形检查。材料、真实模型成果和正式保存的验证由 0.1.0 完成，本版重新显示并核对这些成果与回执。[验证记录](VALIDATION.md) 说明测试范围和已知限制。
 
 真实模型验证使用本机已有 DeepSeek Account 配置，没有重新配置或复制密钥。测试实例内容是合成资料；这不代表你的生产实例已经验收。桌面应用外壳的独立焦点/输入体验、其他操作系统、其他 Harness 版本和长期学习效果尚未验证。
 
@@ -101,11 +103,11 @@ dsh plugin --profile my-profile remove eh3-dsh-ai-carry
 
 依据：原生入口截图、浏览器运行记录、真实会话与正式文件核对。界面视觉偏好和动态手感尚未得到用户签收。
 
-以下来自合成测试实例中的已安装插件，仅展示插件区域：
+以下来自合成测试实例中的已安装 0.2.0 插件，仅展示插件区域：
 
-![本次使用：选定方法、临时要求、材料与实际成果](docs/screenshots/native-task.png)
+![实例首页：先看名称、用途、目录与积累](docs/screenshots/native-home.png)
 
-[查看正式保存、正文回读和普通检索的分项回执](docs/screenshots/native-learning.png)。
+[查看正式保存、正文回读和普通检索的分项回执](docs/screenshots/native-saved-receipt.png)。
 
 ## 源码开发
 
@@ -126,4 +128,4 @@ npm pack
 
 ## 许可
 
-本插件及复用的 AI Carry 公共核心模块采用 [Apache-2.0](LICENSE)。上游来源、原始文件哈希和改动标记记录在包内 `vendor/ai-carry/PROVENANCE.json`，适配说明见 [NOTICE](NOTICE)；未包含个人资产或私有原型。第三方 UI 依赖与字体遵循各自条款，见 [第三方声明](THIRD_PARTY_LICENSES.md)。GSAP 使用 Standard No Charge License，Noto Sans SC 使用 SIL OFL 1.1。
+本插件及复用的 AI Carry 公共核心模块采用 [Apache-2.0](LICENSE)。上游来源、原始文件哈希和改动标记记录在包内 `vendor/ai-carry/PROVENANCE.json`，适配说明见 [NOTICE](NOTICE)；未包含个人资产或私有原型。第三方 UI 依赖与字体遵循各自条款，见 [第三方声明](THIRD_PARTY_LICENSES.md)。GSAP 使用 Standard No Charge License；MiSans 使用小米 MiSans 字体许可，完整许可随包附带于 `licenses/MiSans-License.pdf`，不纳入 Apache-2.0。

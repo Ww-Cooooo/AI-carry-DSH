@@ -1,8 +1,10 @@
-import type {View,DraftInput} from './types.ts';
+import type {View,DraftInput,EntryView,Workspace,Binding} from './types.ts';
 export class CarryError extends Error {code:string;constructor(code:string,message:string);}
+export function assertWorkspaceTarget(workspace:{path:string;sessionIds:readonly string[]},sessionId:string,instanceRoot:string):void;
 export class CarryCore {
   close():void;
-  constructor(directory:string,sessions:{check:(sessionId:string,workspaceId:string)=>Promise<void>;prompt:(sessionId:string,requestId:string,text:string)=>Promise<unknown>;events:(sessionId:string)=>Promise<unknown[]>;text:(event:unknown)=>string});
+  constructor(directory:string,sessions:{check:(sessionId:string,workspaceId:string,instanceRoot?:string)=>Promise<void>;prompt:(sessionId:string,requestId:string,text:string)=>Promise<unknown>;events:(sessionId:string)=>Promise<unknown[]>;text:(event:unknown)=>string});
+  binding(id:string):Binding; entry(workspace?:Workspace|null):EntryView;
   view(taskId?:string):View; bind(root:string):View; unbind(id:string):View;
   openTask(bindingId:string,sessionId:string,workspaceId:string,title:string):Promise<View>;
   find(taskId:string,query:string):View;read(taskId:string,assetId:string):View;adjust(taskId:string,overrides:string):View;

@@ -1,58 +1,54 @@
 {
-  "family": "Noto Sans SC",
-  "retrieved": "2026-11-09",
-  "license": "SIL Open Font License 1.1",
-  "licenseFile": "../../licenses/NotoSansSC-OFL.txt",
-  "sourceUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanssc/NotoSansSC%5Bwght%5D.ttf",
-  "sourceGitBlobSha1": "fb0637bafbcd804fe32152370a1225990745b4bc",
-  "conversion": "fontTools 4.63.0 + Brotli 1.2.1; WOFF2 compression only; no subsetting, glyph, name or metrics edits",
-  "fontRevision": 2.003997802734375,
-  "glyphCount": 31036,
-  "unicodeCodepointCount": 30890,
-  "axes": [
+  "policy": "Unmodified official MiSans WOFF2 files, bundled only with AI Carry; Xiaomi license and attribution accompany the app.",
+  "fonts": [
     {
-      "tag": "wght",
-      "min": 100.0,
-      "default": 100.0,
-      "max": 900.0
-    }
-  ],
-  "representativeText": "AI Carry 本次提纲 600 字；正文已保存，检索仍待检查。材料→任务→成果→学习。来源、拟写入内容、实际差异；只改本次，恢复上次保存。警告：失败后仍可重试。0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz !?，。；：（）【】《》—…",
-  "missingRepresentativeCharacters": [],
-  "cjkUnifiedIdeographsCovered": 20976,
-  "cjkUnifiedIdeographsRangeTotal": 20992,
-  "files": [
-    {
-      "file": "NotoSansSC-variable.ttf",
-      "bytes": 17772300,
-      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+      "family": "MiSans",
+      "weight": 400,
+      "licenseSpdx": "LicenseRef-MiSans",
+      "sha256": "d704c1a932c0bd7e8a071d276cd81c0ed0c9fecfa26ac234f4bed0559fe1cb2d",
+      "licenseSha256": "4a93a27cd2bd81b3b5ecfd0a853144a876fa26938a93a68443c67d74172fcb86",
+      "unchangedUpstreamBytes": true,
+      "file": "MiSans-Regular.woff2",
+      "copyright": "Xiaomi Inc.",
+      "source": {
+        "archiveSha256": "b6aa1fc827035922612df8edf36e5609bca1c5441e25cd57572204569b7b81d9",
+        "repository": "https://hyperos.mi.com/font/zh/download/",
+        "member": "MiSans/woff2/MiSans-Regular.woff2"
+      },
+      "licenseFile": "licenses/MiSans-License.pdf"
     },
     {
-      "file": "NotoSansSC-variable.woff2",
-      "bytes": 7782072,
-      "sha256": "aef8c34277afad81ecd0227138a830263c0caea65b7aea66d1195395f097b55a"
+      "family": "MiSans",
+      "weight": 500,
+      "licenseSpdx": "LicenseRef-MiSans",
+      "sha256": "44e28ca6c2f0ca79829f192831ef87b5eec7c464f5cfb7a83467f57bb6e58114",
+      "licenseSha256": "4a93a27cd2bd81b3b5ecfd0a853144a876fa26938a93a68443c67d74172fcb86",
+      "unchangedUpstreamBytes": true,
+      "file": "MiSans-Medium.woff2",
+      "copyright": "Xiaomi Inc.",
+      "source": {
+        "archiveSha256": "b6aa1fc827035922612df8edf36e5609bca1c5441e25cd57572204569b7b81d9",
+        "repository": "https://hyperos.mi.com/font/zh/download/",
+        "member": "MiSans/woff2/MiSans-Medium.woff2"
+      },
+      "licenseFile": "licenses/MiSans-License.pdf"
+    },
+    {
+      "family": "MiSans",
+      "weight": 600,
+      "licenseSpdx": "LicenseRef-MiSans",
+      "sha256": "78227c6ec59566785c65ac0b5312328bfa2f879918f3d7403725785615a9a8f6",
+      "licenseSha256": "4a93a27cd2bd81b3b5ecfd0a853144a876fa26938a93a68443c67d74172fcb86",
+      "unchangedUpstreamBytes": true,
+      "file": "MiSans-Semibold.woff2",
+      "copyright": "Xiaomi Inc.",
+      "source": {
+        "archiveSha256": "b6aa1fc827035922612df8edf36e5609bca1c5441e25cd57572204569b7b81d9",
+        "repository": "https://hyperos.mi.com/font/zh/download/",
+        "member": "MiSans/woff2/MiSans-Semibold.woff2"
+      },
+      "licenseFile": "licenses/MiSans-License.pdf"
     }
   ],
-  "runtimeFiles": [
-    "NotoSansSC-variable.woff2"
-  ],
-  "buildOnly": [
-    "NotoSansSC-variable.ttf",
-    "build-font.py",
-    ".build/",
-    "noto-sans-sc-5.3.1.tgz",
-    "NotoSansSC-Regular.ttf"
-  ],
-  "notRuntime": [
-    "*-specimen.jpg",
-    "research-*.jpg"
-  ],
-  "hostNote": "Harness package assets route does not serve WOFF2. Build should embed the complete WOFF2 as data:font/woff2 in package CSS; verify the resulting host entry and exclude source/build/research files from the runtime package.",
-  "roles": [
-    "body/interface",
-    "headings",
-    "ordinary numeric labels"
-  ],
-  "coverageLimit": "Complete upstream font retained; not every Unicode CJK extension is present. All tested task text is covered; generic fallback is for unsupported characters or loading failure only.",
-  "copyright": "Copyright 2014-2021 Adobe; Reserved Font Name 'Source'"
+  "schemaVersion": 1
 }

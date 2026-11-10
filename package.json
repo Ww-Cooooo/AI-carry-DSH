@@ -1,6 +1,6 @@
 {
   "name": "eh3-dsh-ai-carry",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "description": "AI carry-DSH: native DeepSeek Harness workflow for using AI Carry methods and reviewing sourced learning.",
@@ -43,7 +43,8 @@
     "THIRD_PARTY_LICENSES.md",
     "licenses/*.txt",
     "licenses/dependencies/*",
-    "assets/fonts/manifest.json"
+    "assets/fonts/manifest.json",
+    "licenses/*.pdf"
   ],
   "scripts": {
     "build": "node scripts/build.mjs",
@@ -64,7 +65,9 @@
         "@deepseek-ai/dsh-client-ui-sidebar",
         "@deepseek-ai/dsh-client-ui-workspace",
         "@deepseek-ai/dsh-api-remotes",
-        "@deepseek-ai/dsh-client-locale"
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-context-menu",
+        "@deepseek-ai/dsh-api-workspace-controller"
       ]
     }
   },
