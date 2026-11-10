@@ -1,0 +1,19 @@
+Package: @antv/util@2.0.17
+Upstream declared license: ISC
+Declaration source: https://registry.npmjs.org/@antv%2futil/2.0.17
+Official repository: https://github.com/antvis/util
+Retrieved: 2026-11-09
+
+Applies only to node_modules/@antv/algorithm/node_modules/@antv/util. Installed and exact published metadata declare ISC. The npm publication provides no gitHead; repository tags have no 2.0.17 release. The inspected historical 2.x tree and installed package have no LICENSE/COPYING file. Do not substitute util 3.x MIT. Package author is https://github.com/orgs/antvis/people. No package-specific copyright line or year has been invented.
+
+The standard terms below are copied from the SPDX license-list data, not represented as a recovered package LICENSE file. The copyright template in that reference is retained verbatim because the inspected upstream sources supply no package-specific copyright notice; no owner/year has been substituted.
+Standard text source: https://raw.githubusercontent.com/spdx/license-list-data/main/json/details/ISC.json
+
+ISC License
+
+Copyright <year> <owner> 
+
+Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+

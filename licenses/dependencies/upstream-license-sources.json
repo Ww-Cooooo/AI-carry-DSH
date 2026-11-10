@@ -1,0 +1,106 @@
+{
+  "retrieved": "2026-11-09",
+  "scope": "Six requested runtime dependencies only",
+  "standardTextSources": {
+    "MIT": "https://raw.githubusercontent.com/spdx/license-list-data/main/json/details/MIT.json",
+    "ISC": "https://raw.githubusercontent.com/spdx/license-list-data/main/json/details/ISC.json"
+  },
+  "records": [
+    {
+      "name": "@ant-design/icons-svg",
+      "version": "4.6.0",
+      "declaredLicense": "MIT",
+      "file": "@ant-design__icons-svg-LICENSE",
+      "captureKind": "exact-release-license",
+      "sourceUrl": "https://raw.githubusercontent.com/ant-design/ant-design-icons/7f2516ac91226d2b41f93b35cb5197c8d94f7189/LICENSE",
+      "metadataUrl": "https://registry.npmjs.org/@ant-design%2ficons-svg/4.6.0",
+      "commit": "7f2516ac91226d2b41f93b35cb5197c8d94f7189",
+      "retrieved": "2026-11-09",
+      "sha256": "5d367fb0a07340571542eb4ee8eb1add62d37b71bad6786a57c2e9a86bf76c70",
+      "bytes": 1099,
+      "notes": "License copied from npm publication gitHead."
+    },
+    {
+      "name": "is-mobile",
+      "version": "5.0.0",
+      "declaredLicense": "MIT",
+      "file": "is-mobile-LICENSE",
+      "captureKind": "exact-release-readme-license",
+      "sourceUrl": "https://raw.githubusercontent.com/juliangruber/is-mobile/2708dd8f07d91f354a46b8dff3053abb6b840067/README.md",
+      "metadataUrl": "https://registry.npmjs.org/is-mobile/5.0.0",
+      "commit": "2708dd8f07d91f354a46b8dff3053abb6b840067",
+      "retrieved": "2026-11-09",
+      "sha256": "fa1c3fdf3f916624423b2332ec8dcee28f7dbde5e51c6bea32447059a40fe71d",
+      "bytes": 1103,
+      "notes": "Full License section extracted from README at npm publication gitHead; HTML entities decoded."
+    },
+    {
+      "name": "@antv/g-lite",
+      "version": "2.7.2",
+      "declaredLicense": "MIT",
+      "file": "@antv__g-lite-LICENSE",
+      "captureKind": "same-release-monorepo-license",
+      "sourceUrl": "https://raw.githubusercontent.com/antvis/G/89b360c95bbc367f96b876ef9c27424e4c565084/packages/g/LICENSE",
+      "metadataUrl": "https://raw.githubusercontent.com/antvis/G/89b360c95bbc367f96b876ef9c27424e4c565084/packages/g-lite/package.json",
+      "commit": "89b360c95bbc367f96b876ef9c27424e4c565084",
+      "retrieved": "2026-11-09",
+      "sha256": "7cd9f15ca43ba039aa3503d92cd1a453e4e78ff90abd15c0d471f34b08921d6f",
+      "bytes": 1065,
+      "notes": "Tag @antv/g-lite@2.7.2 resolves to this commit. g-lite package declares MIT but omits a LICENSE; copied the sibling packages/g/LICENSE notice from the same release commit, shared byte-for-byte by 29 monorepo packages. This is explicitly a shared notice, not a nonexistent g-lite-specific file."
+    },
+    {
+      "name": "@antv/algorithm",
+      "version": "0.1.26",
+      "declaredLicense": "MIT",
+      "file": "@antv__algorithm-LICENSE-NOTICE.txt",
+      "captureKind": "declared-license-with-spdx-reference",
+      "sourceUrl": "https://raw.githubusercontent.com/antvis/algorithm/58b99ab9c937b8ec3e5e99b57624ad5a007682e5/packages/graph/package.json",
+      "metadataUrl": "https://registry.npmjs.org/@antv%2falgorithm/0.1.26",
+      "commit": "58b99ab9c937b8ec3e5e99b57624ad5a007682e5",
+      "retrieved": "2026-11-09",
+      "sha256": "bc2c0238b35f544545bc7102cb82f7b065c37dd88992b71c85b399467b34ce58",
+      "bytes": 2052,
+      "notes": "The exact publication commit and installed package declare MIT. No LICENSE/COPYING file exists in the inspected release tree, and README has no license text. Package author is https://github.com/orgs/antvis/people. No package-specific copyright line or year has been invented."
+    },
+    {
+      "name": "@antv/event-emitter",
+      "version": "0.1.3",
+      "declaredLicense": "MIT",
+      "file": "@antv__event-emitter-LICENSE-NOTICE.txt",
+      "captureKind": "declared-license-with-spdx-reference",
+      "sourceUrl": "https://raw.githubusercontent.com/antvis/event-emitter/f46ff7712f332ef1c8b7601eb88b5784ad4edaa1/package.json",
+      "metadataUrl": "https://registry.npmjs.org/@antv%2fevent-emitter/0.1.3",
+      "commit": "f46ff7712f332ef1c8b7601eb88b5784ad4edaa1",
+      "retrieved": "2026-11-09",
+      "sha256": "eb4487a84a04dd966b76654810acc63961f8c272f85c8b108ddb5835a8815839",
+      "bytes": 1991,
+      "notes": "The exact publication commit and installed package declare MIT. No LICENSE/COPYING file exists in the inspected release tree, and README has no license text. No package-specific copyright line or year has been invented."
+    },
+    {
+      "name": "@antv/util",
+      "version": "2.0.17",
+      "declaredLicense": "ISC",
+      "file": "@antv__util-2.0.17-ISC-NOTICE.txt",
+      "captureKind": "declared-license-with-spdx-reference",
+      "sourceUrl": "https://registry.npmjs.org/@antv%2futil/2.0.17",
+      "metadataUrl": "https://registry.npmjs.org/@antv%2futil/2.0.17",
+      "commit": null,
+      "retrieved": "2026-11-09",
+      "sha256": "64fd4171a868692e9857843e410b74c2ed1efe25008f191958ce9e7a6370979a",
+      "bytes": 1791,
+      "notes": "Applies only to node_modules/@antv/algorithm/node_modules/@antv/util. Installed and exact published metadata declare ISC. The npm publication provides no gitHead; repository tags have no 2.0.17 release. The inspected historical 2.x tree and installed package have no LICENSE/COPYING file. Do not substitute util 3.x MIT. Package author is https://github.com/orgs/antvis/people. No package-specific copyright line or year has been invented."
+    }
+  ],
+  "reusedLicenses": [
+    {
+      "name": "gsap",
+      "version": "3.15.1",
+      "file": "../GSAP-Standard-License.txt"
+    },
+    {
+      "name": "@gsap/react",
+      "version": "2.1.2",
+      "file": "../GSAP-Standard-License.txt"
+    }
+  ]
+}

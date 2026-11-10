@@ -1,0 +1,161 @@
+{
+  "checkedAt": "2026-11-10T00:48:07.183992+00:00",
+  "project": "AI carry-DSH",
+  "version": "0.1.0",
+  "environment": {
+    "os": "Windows",
+    "node": "24.16.0",
+    "harness": "0.2.2-rc.1",
+    "harnessBuild": "c59d10a",
+    "aiCarry": "2.2.0"
+  },
+  "sourceBuild": {
+    "scope": "Fresh directory exported from the public Git index; no original AI Carry development repository or local runtime files.",
+    "dependencyInstall": "npm ci --legacy-peer-deps --ignore-scripts: passed",
+    "build": "npm run build: passed",
+    "typeCheck": "npx --no-install tsc -p tsconfig.client.json: passed",
+    "fixtures": "node scripts/init-fixtures.mjs: synthetic A/B instances initialized",
+    "integrationTests": {
+      "passed": 12,
+      "failed": 0
+    },
+    "runtimeFilesMatchFinalArchive": [
+      {
+        "path": "lib/client.canvas.js",
+        "sha256": "3341b54fc1622ee9a98ff89932582196242ee5ebb0845f049aa93854ba05feef"
+      },
+      {
+        "path": "lib/client.graph.js",
+        "sha256": "3ac2891696425611aad7412461e6dfd80fe0a839dc08469af7323d3fa0aed0ba"
+      },
+      {
+        "path": "lib/client.js",
+        "sha256": "7a798195f428650853ffc780219dab479ca73e7868d13a73fce41466aef7b924"
+      },
+      {
+        "path": "lib/index.js",
+        "sha256": "92b1e2a36cb53e41a48c3662c9c1305a775b349e634700341dc757cb18c88740"
+      },
+      {
+        "path": "lib/typert.host.js",
+        "sha256": "6efe8eb1a53ea3e200d4bc39305a7b1c9457290331abc08347f5791663903b78"
+      },
+      {
+        "path": "lib/typert.remote-client.js",
+        "sha256": "d76ba2c83a6807b416f4b33eb0f5d6c35cdc8d52f418cf193bb354d6dd058e1a"
+      },
+      {
+        "path": "lib/types/types.js",
+        "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+      },
+      {
+        "path": "lib/typert.remote-client.d.ts.map",
+        "sha256": "4d6cdf151d63838cbabe1110f2973bc53d086016abfc46c29e1241e325baeac7"
+      },
+      {
+        "path": "lib/typert.host.d.ts",
+        "sha256": "5e2d26ee86d0fe170dac8cd3f5854e67bdea334c57f40a5766ace57b8304c17d"
+      },
+      {
+        "path": "lib/typert.remote-client.d.ts",
+        "sha256": "73ec94d760540eba55899c7094277bdd03b13b01f4fe4535a63c954e313d9681"
+      },
+      {
+        "path": "lib/types/types.d.ts",
+        "sha256": "0e17d79613a031e1cf06930eb2f7d8d6497fe37d42754dcac80ce03716913798"
+      },
+      {
+        "path": "lib/client.canvas.LICENSE.txt",
+        "sha256": "ad1e318e098bcd18d528d6a10dece449aa972b6d3463e4d20bdef03d415eb8d7"
+      },
+      {
+        "path": "lib/client.graph.LICENSE.txt",
+        "sha256": "a98d6d2326d602d3fca1fa8abecff82bf0807c7f99ddd3a1f7aa322c094df53f"
+      },
+      {
+        "path": "lib/client.LICENSE.txt",
+        "sha256": "ae4f3e5643b407362539b6e9ef7406c7467eed701ef06258e1a3c31f67de5ba0"
+      }
+    ]
+  },
+  "package": {
+    "filename": "eh3-dsh-ai-carry-0.1.0.tgz",
+    "bytes": 8670079,
+    "sha256": "287eff409dae3a766aaceac156e27d9f9d9ff15c335b2a73d88c441dbf75d301",
+    "files": 144,
+    "archiveAllowlistCheck": "passed",
+    "privatePathAndCredentialPatternFindings": [],
+    "officialLifecycleChecks": [
+      "Official CLI installed prebuilt tgz in isolated profile",
+      "Native installed UI and strict Host Remote active",
+      "New session/task recalled and read the edited formal asset",
+      "Plugin Manager application and warnings checked for disable/restore",
+      "Official disabled overlay removes plugin service; records retained",
+      "Reinstall/update of the same tgz restores service",
+      "Official uninstall removes service and preserves formal file + task store"
+    ],
+    "installedArchive": {
+      "repository": "git+https://github.com/Ww-Cooooo/AI-carry-DSH.git",
+      "readmeSame": true,
+      "hostSame": true,
+      "clientSame": true
+    },
+    "nativeUi": {
+      "errors": [],
+      "visibleEntry": true
+    },
+    "managerDisable": {
+      "application": "applied",
+      "warnings": []
+    },
+    "managerEnable": {
+      "application": "applied",
+      "warnings": []
+    },
+    "uninstallPreservation": {
+      "formalFileUnchanged": true,
+      "taskStoreUnchanged": true
+    }
+  },
+  "realModelWorkflow": {
+    "requests": 2,
+    "provider": "Existing Harness DeepSeek Account",
+    "model": "DeepSeek-V4.1-Flash",
+    "content": "Synthetic test instances only",
+    "materialsDelivered": true,
+    "modelResultRead": true,
+    "sourcedLearningDraft": true,
+    "editedPreviewRevision": 2,
+    "exactPreviewReadback": true,
+    "originalMethodUnchanged": true,
+    "newTaskOrdinaryRecall": true,
+    "decisionActor": "Owner UI automation in the authorized test; not personal user acceptance",
+    "credentialsCopied": false
+  },
+  "ui": {
+    "surface": "Installed Harness Web Client native sidebar/workspace slots",
+    "viewportSizes": [
+      [
+        1440,
+        960
+      ],
+      [
+        1100,
+        780
+      ]
+    ],
+    "pageErrors": [],
+    "horizontalOverflowObserved": false,
+    "nativeReturnToSession": true,
+    "remountRetainedTask": true,
+    "keyboardFocusVisible": true,
+    "localChineseFontRendered": true,
+    "reducedMotionChecked": true
+  },
+  "limits": [
+    "Desktop shell focus/input/window experience, other operating systems and other Harness versions were not validated.",
+    "No production instance learning write was performed; long-term learning effectiveness and human visual acceptance remain unverified.",
+    "Reinstalling the same package is not a cross-version migration test.",
+    "Upstream Zod 4.4.3 advisory GHSA-mrhx-c7xc-m3w5 remains; the host shared dependency was not upgraded."
+  ]
+}

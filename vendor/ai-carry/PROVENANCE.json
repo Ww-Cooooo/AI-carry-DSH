@@ -1,0 +1,165 @@
+{
+  "commit": "bd0f878473690cf65954f916125be4cdc820f923",
+  "license": "Apache-2.0",
+  "files": [
+    {
+      "source": "dashboard/scripts/learning-save-cli.mjs",
+      "sha256": "d34aabc6abe3896af6e7dca4180fc34a8f4f498ce13661957bacc16137432cdd",
+      "adapted": true
+    },
+    {
+      "source": "dashboard/scripts/first-instantiation-transaction.mjs",
+      "sha256": "6e802ae557f73b5d815d5b93e25c9adfafd4dad89e8348c4e0f59892e76025b0",
+      "adapted": false
+    },
+    {
+      "source": "dashboard/scripts/sync-snapshot.mjs",
+      "sha256": "b86191eaacfbc1290f00da43efe974db8e95d7faac783e6d8300fab79e25e919",
+      "adapted": false
+    },
+    {
+      "source": "dashboard/scripts/query-assets.mjs",
+      "sha256": "6e1d24409b60e27d118017c18f9eb709ffeb4d6834c47c129661661876f5bd56",
+      "adapted": false
+    },
+    {
+      "source": "dashboard/scripts/learning-capture-transaction.mjs",
+      "sha256": "75b0f365884bf65165ec23dce2c73269165c16e8a7bfeaaab6e2bce356e36dd7",
+      "adapted": true
+    },
+    {
+      "source": "dashboard/scripts/asset-route-contract.mjs",
+      "sha256": "227e4b3455aa04cccff8dcf0fd4eb94597139aa219d3e8e37f74c9d142004e76",
+      "adapted": false
+    },
+    {
+      "source": "dashboard/scripts/operational-user-report.mjs",
+      "sha256": "d1a971888aed78e00e1de8663f1bf2848dd040131a2e64a1f33387987ee96202",
+      "adapted": false
+    },
+    {
+      "source": "dashboard/scripts/safe-output-boundary.mjs",
+      "sha256": "4f3a58b8af76dbbdd28607cb03400d68ab97f81168650f7bdd6f0349ecc64027",
+      "adapted": false
+    },
+    {
+      "source": "dashboard/scripts/secret-content-boundary.mjs",
+      "sha256": "976592e95f16e644d4c96215102d3e498c4ffa07245be5dd8d86dda1029272e7",
+      "adapted": false
+    },
+    {
+      "source": "dashboard/scripts/snapshot-envelope.mjs",
+      "sha256": "c5bd4b331d171d209204a3f1b3f9a7f81921bf89a40e2527a890ab2f7bdd3947",
+      "adapted": false
+    },
+    {
+      "source": "dashboard/scripts/snapshot-semantics.mjs",
+      "sha256": "ace5913a5282afd2ab79db783e82b0bc5d47316061a68d0d05a4112e4687311e",
+      "adapted": false
+    },
+    {
+      "source": "dashboard/scripts/startup-capsule-contract.mjs",
+      "sha256": "3c35aa8557541bcca130483a9c654757563b434de1ba4c9fa9c3e46c489b31ba",
+      "adapted": false
+    },
+    {
+      "source": "dashboard/scripts/sync-startup-capsule.mjs",
+      "sha256": "e5014649144a9d40fd1fe267d551258234b46f94c2e129e1085e7d14ff1994a5",
+      "adapted": false
+    },
+    {
+      "source": "dashboard/scripts/instance-write-lock.mjs",
+      "sha256": "5b2202d7231dfa7609563db30d69757eb517d4f9c3bb04cf3989723742b4046f",
+      "adapted": false
+    },
+    {
+      "source": "dashboard/scripts/snapshot-source-builder.mjs",
+      "sha256": "b3db88162f2ed420a653f59ba02fbc3272dd454b1aac7cc4774c4f59594bf4bf",
+      "adapted": false
+    },
+    {
+      "source": "dashboard/scripts/snapshot-sync-transaction.mjs",
+      "sha256": "d129471607fa897d0294c9106b37c9c81440a48b51de8226707fa016315ba67b",
+      "adapted": false
+    },
+    {
+      "source": "dashboard/scripts/bounded-retrieval.mjs",
+      "sha256": "af27380e7a28250e366d6a76acb28d0098f21ef524ac8946e7d1538ed9d24e2d",
+      "adapted": false
+    },
+    {
+      "source": "dashboard/scripts/cross-session-signal-transaction.mjs",
+      "sha256": "6fc4cb9807c4e36000ccc207558dbd45684ebe974eb7ac9cb4c354f043c476f6",
+      "adapted": false
+    },
+    {
+      "source": "dashboard/scripts/product-identity.mjs",
+      "sha256": "dd4d6251ad5b57462cbc9af76d6e7854c5c551ed7ecd1b0c82100b35c7e5af7f",
+      "adapted": false
+    },
+    {
+      "source": "dashboard/scripts/candidate-index-contract.mjs",
+      "sha256": "ecbb047fd22bc2920a41b84eafd0c6854e88f5e3bc2b0ba4f2faa3a52ceb1a1a",
+      "adapted": false
+    },
+    {
+      "source": "dashboard/scripts/query-startup-capsule.mjs",
+      "sha256": "1fe89787c8ea5196ceef8dca4c3d9edfc912c58257b05b17e56f94144045d098",
+      "adapted": false
+    },
+    {
+      "source": "dashboard/scripts/accumulation-projection.mjs",
+      "sha256": "f4733c061db2bd1aae360fad60134ccb10c11c2375eec49be9d7293b5b1b0c2b",
+      "adapted": false
+    }
+  ],
+  "repository": "https://github.com/Ww-Cooooo/AI-Carry",
+  "ref": "v2.2.0",
+  "verification": "All 22 original module hashes, 11 blank template files and LICENSE matched the public v2.2.0 files before publication.",
+  "templates": [
+    {
+      "source": "assistant.toml",
+      "sha256": "19163cce62a4fa7beb3066d93a84783edfce19d2add94b4cdbcd1f7daf0a50c5"
+    },
+    {
+      "source": "core/manifest.toml",
+      "sha256": "6c414313e13250e279648149f37c938d3268941139e4709f7b5f69311c93a09e"
+    },
+    {
+      "source": "instance/manifest.toml",
+      "sha256": "145b0a8235de6da1ab7c69e2f11f56d7ab89e59f154bcc419451b92c14d13c94"
+    },
+    {
+      "source": "instance/evolution/index.toml",
+      "sha256": "9c1a93c895ee946b9e7f8760eacd575bdee8eb31632740addfd9e0fc57d9dacd"
+    },
+    {
+      "source": "instance/hosts/registry.toml",
+      "sha256": "daa01c1a52b2bc24f155f64b992cb97b91228d215ad7e39140bea533b6d8762e"
+    },
+    {
+      "source": "instance/maps/domain-map.toml",
+      "sha256": "7cac9d7f40b4e700458c89968953c118a4701946ca0ed233677fb5673cfbca86"
+    },
+    {
+      "source": "instance/maps/signal-map.toml",
+      "sha256": "56970d37520452b5790a20cba0a27f48f92c3d8e56dd1b437b6a0cb17b0b44f3"
+    },
+    {
+      "source": "instance/maps/time-trigger-map.toml",
+      "sha256": "e48f1e71c6697ea1e0924552c6d4814e148798a1bf16ad162a9b85fd8295e7f9"
+    },
+    {
+      "source": "instance/signals/control.toml",
+      "sha256": "6e27267df781b6ff38441586efa6af860a7a2d7cca4b50be839baecf2233d502"
+    },
+    {
+      "source": "instance/validations/index.toml",
+      "sha256": "4947a11bc0394a6446caec22b568339cc628ff1fa03489939887cfc7543080e0"
+    },
+    {
+      "source": "core/maps/asset-confirmation-gates.toml",
+      "sha256": "dd9966697fb60bc46aed3e7d35416a02160466bcdc0fb769952d55f9179042b3"
+    }
+  ]
+}

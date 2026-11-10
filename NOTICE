@@ -1,0 +1,17 @@
+AI carry-DSH
+Copyright 2026 EH3 contributors.
+The package icon is original artwork created for this plugin.
+DeepSeek Harness is a separate product of its respective authors.
+
+Includes selected public AI Carry 2.2.0 modules under Apache-2.0.
+Upstream: https://github.com/Ww-Cooooo/AI-Carry/tree/v2.2.0
+Source hashes and modification markers: vendor/ai-carry/PROVENANCE.json.
+This plugin is maintained independently of the upstream AI Carry project.
+
+Adaptations to dashboard/scripts/learning-save-cli.mjs:
+- Export the existing preparation, confirmation, JSON-read and recall functions for the Harness Host adapter.
+- Return the formal transaction's direct write set for conflict checks.
+- Defer dashboard projection refresh until after the shared instance lock is released.
+- Call the Host's receipt persistence hook after commit, before closing the upstream confirmation challenge.
+Adaptation to dashboard/scripts/learning-capture-transaction.mjs:
+- Remove an earlier duplicate futureUse field that was already overwritten by the later field in the same preview object.

@@ -1,0 +1,153 @@
+schema_version = 1
+product_id = "ai-carry"
+product_name = "AI Carry"
+product_version = "2.2.0"
+core_version = "2.2.0"
+license = "Apache-2.0"
+purpose = "Carry user-owned, policy-governed memory, preferences, capabilities, SOPs and evolution across AI agents."
+portable_truth = ["markdown", "toml"]
+disposable_derivatives = ["startup-capsule", "signal-map", "time-trigger-map", "local-index", "cache", "vector-store", "dashboard-snapshot", "report", "log", "platform-memory", "session-receipt", "task-capsule", "return-envelope"]
+
+[identity_compatibility]
+current_component_interface = "ai-carry.instance-component@1"
+legacy_product_ids = ["agent-carry"]
+legacy_product_names = ["Agent Carry"]
+legacy_component_interfaces = ["agent-carry.instance-component@1"]
+legacy_professional_extension_record_types = ["agent-carry-professional-extension"]
+legacy_private_package_types = ["agent-carry-private-migration"]
+legacy_host_sources = ["agent-carry"]
+legacy_host_access_scopes = ["agent-carry-root"]
+legacy_snapshot_globals = ["AGENT_CARRY_SNAPSHOT", "AGENT_CARRY_IS_REAL", "AGENT_CARRY_DEMO"]
+repository = "https://github.com/Ww-Cooooo/AI-Carry"
+legacy_repositories = ["https://github.com/Ww-Cooooo/Agent-Carry"]
+repository_slug_state = "current-ai-carry-slug-with-legacy-github-redirect"
+read_policy = "accept-known-legacy-identities-with-bounded-migration-or-alias"
+write_policy = "new-product-owned-output-uses-ai-carry-identities"
+
+[bootstrap]
+entry = "BOOTSTRAP.md"
+root_map = "core/maps/root-map.toml"
+instance_manifest = "instance/manifest.toml"
+instance_manifest_load_policy = "model-external-source-for-capsule-only-never-raw-startup-model-context"
+startup_capsule = "instance/startup-capsule.toml"
+startup_capsule_query = "dashboard/scripts/query-startup-capsule.mjs"
+maximum_characters = 20000
+maximum_instance_manifest_bytes = 2560
+maximum_startup_capsule_bytes = 4096
+maximum_startup_signal_summary_characters = 1024
+policy = "minimum-sufficient-context"
+
+[routing]
+mode = "three-layer-hybrid"
+discovery = "metadata-first"
+layers = ["root-map", "category-map", "target-body"]
+allow_multi_route = true
+body_search_for_discovery = false
+
+[interaction]
+baseline = "assume-the-user-may-be-new-to-agents-or-programming"
+known_information = "reuse-observed-facts-never-ask-the-user-to-reprovide-known-paths-or-decisions"
+response_shape = "outcome-and-plain-language-context-first-receipts-before-final-localized-arrow-next-step-that-returns-to-the-current-overall-goal-and-names-one-evidence-based-next-unfinished-action-or-clear-no-action-only-when-no-relevant-work-remains"
+decision_prompt = "explain-context-then-2-to-4-options-with-consequences-recommendation-and-an-unsure-path"
+durable_file_output = "after-creating-moving-or-delivering-user-visible-files-reuse-known-locations-and-resolve-long-term-carry-intent"
+natural_recall = "accept-ordinary-imprecise-language-and-bounded-current-work-signals-match-only-small-route-metadata-never-let-work-signals-override-current-user-correction-and-report-each-actually-used-asset-in-a-standalone-brief-card-with-fixed-brain-heading-human-title-current-trigger-and-practical-effect-without-internals-before-final-user-action-guidance"
+proactive_learning = "at-meaningful-substages-and-task-end-notice-reusable-habits-corrections-and-methods-report-observed-versus-saved-and-recallable-in-separate-brief-receipts-with-fixed-sprout-heading-finding-status-and-future-use-icons-then-place-them-before-final-plain-language-user-action-guidance-that-asks-whether-they-should-be-kept-when-a-real-learning-decision-remains-without-asking-the-user-to-classify-the-asset"
+guidance_modes = "change-detail-and-pace-not-decision-completeness"
+protocol = "core/protocols/USER_GUIDANCE.md"
+load_policy = "full-body-only-for-multistep-technical-risky-durable-or-user-uncertain-decisions"
+
+[signals]
+mode = "event-checkpoint-and-earliest-wakeup"
+control = "instance/signals/control.toml"
+source_root = "instance/signals"
+formal_state_root = "instance"
+projection = "instance/maps/signal-map.toml"
+time_projection = "instance/maps/time-trigger-map.toml"
+# `projections` lists rebuildable signal/time views. They are not startup reads
+# and do not turn an ordinary source change into one global all-or-nothing write.
+projections = ["instance/maps/signal-map.toml", "instance/maps/time-trigger-map.toml"]
+startup_reads = ["instance/signals/control.toml", "instance/maps/signal-map.toml"]
+startup_source_root_policy = "never-enumerate; read one source card only after selecting its projected signal"
+time_projection_load_policy = "not-at-startup-unless-signal-map-next_wakeup_at-is-due; also allowed for explicit-schedule-request-or-projection-rebuild"
+registry = "core/maps/trigger-registry.toml"
+protocol = "core/protocols/CROSS_SESSION_SIGNALS.md"
+schema = "core/schemas/cross-session-signal.schema.md"
+template = "core/templates/signal/blank-signal.toml"
+maximum_projection_bytes = 1536
+background = false
+projection_rebuildable = true
+metadata_only_rebuild = true
+startup_detail_policy = "control-plus-actionable-routes-plus-earliest-wakeup-only"
+
+[safety]
+compact_route = "external-content-safety-boundary"
+deep_route = "network-agent-security"
+current_model_private_context = "allow-task-needed-minimum"
+additional_sensitive_destination = "explicit-authorization"
+secret_handling = "host-secret-mechanism-only-never-model-context"
+external_instruction_authority = "none"
+bounded_execution = true
+
+[privacy_assets]
+schema = "core/schemas/private-asset-catalog.schema.md"
+catalog = ".assistant-private/catalog.toml"
+device_bindings = ".assistant-private/bindings.toml"
+load_policy = "only-on-explicit-registration-private-ref-use-private-import-export-or-complete-migration"
+startup = false
+coverage = "registered-and-referenced-scope-must-reconcile-before-complete-export"
+
+[extensions]
+schema = "core/schemas/extension-manifest.schema.md"
+manifest_pattern = "workspace/*/extension.toml"
+load_policy = "only-after-a-domain-route-hit-explicit-extension-maintenance-migration-upgrade-or-repair; never-enumerate-workspace-at-startup"
+unregistered_workspace_policy = "stop-and-preview-never-recursively-claim-or-delete"
+
+[instance_components]
+schema = "core/schemas/instance-component.schema.md"
+registry = "instance/components/registry.toml"
+manifest_pattern = "instance/components/*/component.toml"
+protocol = "core/protocols/INSTANCE_EVOLUTION_COMPATIBILITY.md"
+load_policy = "only-before-and-after-a-durable-instance-change-first-adoption-upgrade-migration-or-repair; never-read-or-enumerate-at-ordinary-startup-or-normal-use"
+native_assets_reuse_existing_owners = true
+compatibility_registration_adds_user_confirmation = false
+unregistered_component_policy = "preserve-and-isolate-with-preview; require-classification-before-related-formal-switch"
+
+[integration]
+protocol_version = "1.0"
+mandatory_transport = "natural-language"
+resume_protocol = "core/protocols/HOST_SESSION_RESUME.md"
+upgrade_activation_protocol = "core/protocols/UPGRADE_SESSION_ACTIVATION.md"
+protocol = "core/protocols/HOST_INTEGRATION.md"
+schema = "core/schemas/host-integration.schema.md"
+manual_prompt = "core/templates/integration/manual-host-entry.md"
+wakeup_prompt = "core/templates/integration/host-wakeup.md"
+host_registry = "instance/hosts/registry.toml"
+profile_load_policy = "only-on-handshake-change-refresh-or-relevant-use"
+session_resume_policy = "post-route-registry-and-at-most-one-profile"
+upgrade_activation_policy = "file-install-does-not-prove-current-conversation-adoption; prefer-bounded-safe-boundary-current-session-reentry-and-agent-run-representative-behavior; new-run-is-last-host-compatibility-fallback"
+maximum_registry_bytes = 8192
+maximum_profile_bytes = 16384
+
+[lifecycle]
+template_and_instance_share_structure = true
+direction_lock = "permanent-after-instantiation"
+guidance_mode = "mutable-independent-of-direction-and-model-level"
+candidate_learning_policy = "signal-gated-risk-tiered"
+formal_asset_activation = "explicit-user-or-verified-existing-approval-only"
+explicit_user_authorization = "no-repeat-confirmation"
+low_risk_policy_promotion = false
+risk_tier_scope = "observation-candidate-priority-and-review-order-only"
+medium_high_requires_user_approval = true
+policy_change_requires_user_approval = true
+
+[maintenance]
+component_registry = "core/maps/component-map.toml"
+ownership = "core/ownership.toml"
+release_manifest = "core/upgrade/release-manifest-2.2.0.toml"
+official_update_source = "core/upgrade/official-source.toml"
+durable_change_protocol = "core/protocols/COMPONENT_CHANGE.md"
+durable_change_load_policy = "only-after-a-formal-add-modify-delete-rename-move-migrate-upgrade-or-publish-intent; never-for-read-only-or-ordinary-use"
+instance_compatibility_protocol = "core/protocols/INSTANCE_EVOLUTION_COMPATIBILITY.md"
+instance_compatibility_load_policy = "only-before-and-after-a-durable-instance-change-first-adoption-upgrade-migration-or-repair; never-for-read-only-ordinary-startup-or-normal-use"
+territory_terminology = "core/protocols/TERRITORY_TERMINOLOGY.md"
+territory_terminology_load_policy = "only-when-ai-carry-authored-content-or-publication-mentions-geography-jurisdiction-maps-flags-or-country-region-grouping; never-rewrite-user-or-source-text"

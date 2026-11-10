@@ -1,0 +1,58 @@
+{
+  "family": "Noto Sans SC",
+  "retrieved": "2026-11-09",
+  "license": "SIL Open Font License 1.1",
+  "licenseFile": "../../licenses/NotoSansSC-OFL.txt",
+  "sourceUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanssc/NotoSansSC%5Bwght%5D.ttf",
+  "sourceGitBlobSha1": "fb0637bafbcd804fe32152370a1225990745b4bc",
+  "conversion": "fontTools 4.63.0 + Brotli 1.2.1; WOFF2 compression only; no subsetting, glyph, name or metrics edits",
+  "fontRevision": 2.003997802734375,
+  "glyphCount": 31036,
+  "unicodeCodepointCount": 30890,
+  "axes": [
+    {
+      "tag": "wght",
+      "min": 100.0,
+      "default": 100.0,
+      "max": 900.0
+    }
+  ],
+  "representativeText": "AI Carry 本次提纲 600 字；正文已保存，检索仍待检查。材料→任务→成果→学习。来源、拟写入内容、实际差异；只改本次，恢复上次保存。警告：失败后仍可重试。0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz !?，。；：（）【】《》—…",
+  "missingRepresentativeCharacters": [],
+  "cjkUnifiedIdeographsCovered": 20976,
+  "cjkUnifiedIdeographsRangeTotal": 20992,
+  "files": [
+    {
+      "file": "NotoSansSC-variable.ttf",
+      "bytes": 17772300,
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+    },
+    {
+      "file": "NotoSansSC-variable.woff2",
+      "bytes": 7782072,
+      "sha256": "aef8c34277afad81ecd0227138a830263c0caea65b7aea66d1195395f097b55a"
+    }
+  ],
+  "runtimeFiles": [
+    "NotoSansSC-variable.woff2"
+  ],
+  "buildOnly": [
+    "NotoSansSC-variable.ttf",
+    "build-font.py",
+    ".build/",
+    "noto-sans-sc-5.3.1.tgz",
+    "NotoSansSC-Regular.ttf"
+  ],
+  "notRuntime": [
+    "*-specimen.jpg",
+    "research-*.jpg"
+  ],
+  "hostNote": "Harness package assets route does not serve WOFF2. Build should embed the complete WOFF2 as data:font/woff2 in package CSS; verify the resulting host entry and exclude source/build/research files from the runtime package.",
+  "roles": [
+    "body/interface",
+    "headings",
+    "ordinary numeric labels"
+  ],
+  "coverageLimit": "Complete upstream font retained; not every Unicode CJK extension is present. All tested task text is covered; generic fallback is for unsupported characters or loading failure only.",
+  "copyright": "Copyright 2014-2021 Adobe; Reserved Font Name 'Source'"
+}
