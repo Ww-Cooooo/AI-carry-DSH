@@ -129,3 +129,9 @@ npm pack
 ## 许可
 
 本插件及复用的 AI Carry 公共核心模块采用 [Apache-2.0](LICENSE)。上游来源、原始文件哈希和改动标记记录在包内 `vendor/ai-carry/PROVENANCE.json`，适配说明见 [NOTICE](NOTICE)；未包含个人资产或私有原型。第三方 UI 依赖与字体遵循各自条款，见 [第三方声明](THIRD_PARTY_LICENSES.md)。GSAP 使用 Standard No Charge License；MiSans 使用小米 MiSans 字体许可，完整许可随包附带于 `licenses/MiSans-License.pdf`，不纳入 Apache-2.0。
+
+## 在其他 Agent 中问清需求
+
+如果你也希望在其他 Agent 中把模糊想法或“不满意”说清楚，可以单独安装原版 [Easy Ask AI Skill](https://github.com/Ww-Cooooo/easy-ask-ai)：Prompt Ready 用于开工前梳理需求、准备执行提示词，Get Clear 用于问清已有成果的修改要求，再按确认的范围返修。按目标 Agent 的实际技能机制接入，详见 [安装与接入说明](https://github.com/Ww-Cooooo/easy-ask-ai#安装与开始使用)。
+
+这是独立的需求澄清工具，不是本插件的其他 Agent 版本，也不是安装本插件的前置依赖。
